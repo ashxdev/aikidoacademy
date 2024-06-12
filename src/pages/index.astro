@@ -1,50 +1,370 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/PageLayout.astro'
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout>
+  <div id="header-panel" class="wrapper">
+    <div class="header-overlay"></div>
+    <div class="rev-slider slider container fullwidth">
+      <div class="fullwidthbanner-container">
+        <div
+          class="fullwidthabnner revslider-initialised tp-simpleresponsive"
+          style="height: 570px; max-height: 570px;"
+        >
+          <ul style="display: block;">
+            <li
+              data-transition="3dcurtain-horizontal"
+              data-slotamount="1"
+              style="visibility: visible; left: 0px; top: 0px; z-index: 18; opacity: 1;"
+            >
+              <div class="slotholder">
+                <img
+                  src="/media/stefan.jpg"
+                  width="1020"
+                  height="570"
+                  alt="stefan-summer-2018"
+                  title="stefan-summer-2018"
+                  class="defaultimg"
+                  style="width: 1032.53px; height: 577px; position: absolute; top: 0px; left: -6.5px; opacity: 0;"
+                />
+              </div>
+              <div
+                class="caption sfb tp-caption start"
+                data-speed="600"
+                data-start="2200"
+                data-easing="easeOutBack"
+                data-x="865"
+                data-y="478"
+                style="font-size: 14px; padding: 0px; margin: 0px; border-width: 0px; border-style: initial; border-color: initial; line-height: 20px; white-space: nowrap; opacity: 0; left: 865px; top: 528px; transform: rotate(0deg); visibility: hidden;"
+              >
+                <a
+                  href="Novini/Letnyaya-shkola-shihana-Stefana-Stenudda-v-Uzhgorode-2018"
+                  title="details"
+                  class="btn-large btn-style1">Details</a
+                >
+              </div>
+            </li><li
+              data-transition="fade"
+              data-slotamount="1"
+              style="visibility: visible; left: 0px; top: 0px; z-index: 18; opacity: 1;"
+            >
+              <div class="slotholder">
+                <img
+                  src="/media/0-24.jpg"
+                  width="1020"
+                  height="570"
+                  alt="0-24"
+                  title="0-24"
+                  class="defaultimg"
+                  style="width: 1032.53px; height: 577px; position: absolute; top: 0px; left: -6.5px; opacity: 0;"
+                />
+              </div>
+              <div
+                class="caption sfb tp-caption start"
+                data-speed="600"
+                data-start="2200"
+                data-easing="easeOutBack"
+                data-x="865"
+                data-y="478"
+                style="font-size: 14px; padding: 0px; margin: 0px; border-width: 0px; border-style: initial; border-color: initial; line-height: 20px; white-space: nowrap; opacity: 0; left: 865px; top: 528px; transform: rotate(0deg); visibility: hidden;"
+              >
+                <a
+                  href="Novini/International-24-hour-Aikido-Marathon"
+                  title="details"
+                  class="btn-large btn-style1">Details</a
+                >
+              </div>
+            </li><li
+              data-transition="slidevertical"
+              data-slotamount="1"
+              style="visibility: visible; left: 0px; top: 0px; z-index: 18; opacity: 1;"
+            >
+              <div class="slotholder">
+                <img
+                  src="/media/bruno.jpg"
+                  width="1020"
+                  height="570"
+                  alt="bruno"
+                  title="bruno"
+                  class="defaultimg"
+                  style="width: 1032.53px; height: 577px; position: absolute; top: 0px; left: -6.5px; opacity: 0;"
+                />
+              </div>
+              <div
+                class="caption sfb tp-caption start"
+                data-speed="600"
+                data-start="2200"
+                data-easing="easeOutBack"
+                data-x="865"
+                data-y="478"
+                style="font-size: 14px; padding: 0px; margin: 0px; border-width: 0px; border-style: initial; border-color: initial; line-height: 20px; white-space: nowrap; opacity: 0; left: 865px; top: 528px; transform: rotate(0deg); visibility: hidden;"
+              >
+                <a
+                  href="/Novini/Ceminar-Bruno-Gonzalesa-6-dan-ajkido-Ajkikaj-Franciya"
+                  title="details"
+                  class="btn-large btn-style1">Details</a
+                >
+              </div>
+            </li><li
+              data-transition="3dcurtain-horizontal"
+              data-slotamount="1"
+              style="visibility: visible; left: 0px; top: 0px; z-index: 20; opacity: 1;"
+            >
+              <div class="slotholder">
+                <img
+                  src="/media/stefan.jpg"
+                  width="1021"
+                  height="570"
+                  alt="stefan"
+                  title="stefan"
+                  class="defaultimg"
+                  style="width: 1033.54px; height: 577px; position: absolute; left: -7px; top: 0px; opacity: 1;"
+                />
+              </div>
+              <div
+                class="caption sfb tp-caption start"
+                data-speed="600"
+                data-start="2200"
+                data-easing="easeOutBack"
+                data-x="865"
+                data-y="478"
+                style="visibility: visible; font-size: 14px; padding: 0px; margin: 0px; border-width: 0px; border-style: initial; border-color: initial; line-height: 20px; white-space: nowrap; opacity: 1; left: 865px; top: 478px; transform: rotate(0deg);"
+              >
+                <a
+                  href="/Novini/Ceminar-shihana-Stefana-Stenudda"
+                  title="details"
+                  class="btn-large btn-style1">Details</a
+                >
+              </div>
+            </li>
+          </ul>
+          <div class="tp-loader" style="display: none;"></div><div
+            class="tp-bannertimer"
+            style="visibility: hidden; width: 93.2022%;"
+          >
+          </div>
+        </div>
+        <div style="visibility: hidden;" class="tp-leftarrow tparrows round hidearrows"></div><div
+          style="visibility: hidden;"
+          class="tp-rightarrow tparrows round hidearrows"
+        >
+        </div>
+      </div>
+      <a href="#" class="slider-control-prev"></a>
+      <a href="#" class="slider-control-next"></a>
+    </div>
+  </div>
+
+  <div id="main" class="wrapper">
+    <div class="main-content container frontpage">
+      <!-- Container -->
+      <div id="hide-info-container" class="row">
+        <!-- hide info box -->
+        <div class="hide-info-box-style1 span4">
+          <div class="hide-info-box-content">
+            <div class="hide-info-box-header">
+              <img src="/media/1_306x205.jpg" alt="Наші проекти" />
+            </div>
+            <p class="tcenter">Наші проекти</p>
+            <p><a href="/Nashi-proekti" class="btn btn-style1 hide-info-btn">Ознайомитись</a></p>
+            <div class="clearfix"></div>
+          </div>
+          <div class="circle-box">
+            <h4>
+              <span class="circle">
+                <span class="circle-border"></span>
+                <span class="circle-inner icon-ai"></span>
+              </span>
+              AI<small>Рівновага, гармонія</small>
+            </h4>
+          </div>
+        </div>
+        <!-- /hide info box -->
+
+        <!-- hide info box -->
+        <div class="hide-info-box-style2 span4">
+          <div class="hide-info-box-content">
+            <div class="hide-info-box-header">
+              <img src="/media/2_306x205.jpg" alt="Розклад семінарів" />
+            </div>
+            <p class="tcenter">Розклад семінарів</p>
+            <p><a href="/Rozklad-seminariv" class="btn btn-style1 hide-info-btn">Переглянути</a></p>
+            <div class="clearfix"></div>
+          </div>
+          <div class="circle-box">
+            <h4>
+              <span class="circle">
+                <span class="circle-border"></span>
+                <span class="circle-inner icon-ki"></span>
+              </span>
+              KI<small>Життєва сила</small>
+            </h4>
+          </div>
+        </div>
+        <!-- /hide info box -->
+
+        <!-- hide info box -->
+        <div class="hide-info-box-style3 span4">
+          <div class="hide-info-box-content">
+            <div class="hide-info-box-header">
+              <img src="/media/3_306x205.jpg" alt="Про айкідо Академію СІЧ" />
+            </div>
+            <p class="tcenter">Про академію</p>
+            <p><a href="/Pro-nas" class="btn btn-style1 hide-info-btn">Читати</a></p>
+            <div class="clearfix"></div>
+          </div>
+          <div class="circle-box">
+            <h4>
+              <span class="circle">
+                <span class="circle-border"></span>
+                <span class="circle-inner icon-do"></span>
+              </span>
+              DO<small>Філософський принцип</small>
+            </h4>
+          </div>
+        </div>
+        <!-- /hide info box -->
+      </div>
+      <!-- /#hide-info-container -->
+      <h2 class="main-title">
+        Наше відeо
+        <span class="title-meta-text"><a href="/Video" class="link-style3">Усі відео »</a></span>
+      </h2>
+
+      <div class="portfolio video-list">
+        <ul class="portfolio-posts row">
+          <li class="post span4 isotope-item">
+            <div class="post-inner">
+              <div class="post-header">
+                <a href="/Video/Litnij-tabir-ajkido-2023"
+                  ><img src="http://img.youtube.com/vi/LUt7RX67aXM/mqdefault.jpg" alt="" /></a
+                >
+              </div>
+              <div class="post-body">
+                <h2><a href="/Video/Litnij-tabir-ajkido-2023">Літній табір айкідо 2023</a></h2>
+              </div>
+              <a href="/Video/Litnij-tabir-ajkido-2023">
+                <div class="post-overlay">
+                  <div class="post-overlay-meta">
+                    <h2>Літній табір айкідо 2023</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="post span4 isotope-item">
+            <div class="post-inner">
+              <div class="post-header">
+                <a href="/Video/Litnya-shkola-ajkido-2023-pidlitki"
+                  ><img src="http://img.youtube.com/vi/78sxiIxRxOg/mqdefault.jpg" alt="" /></a
+                >
+              </div>
+              <div class="post-body">
+                <h2>
+                  <a href="/Video/Litnya-shkola-ajkido-2023-pidlitki"
+                    >Літня школа айкідо 2023 (підлітки)</a
+                  >
+                </h2>
+              </div>
+              <a href="/Video/Litnya-shkola-ajkido-2023-pidlitki">
+                <div class="post-overlay">
+                  <div class="post-overlay-meta">
+                    <h2>Літня школа айкідо 2023 (підлітки)</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="post span4 isotope-item">
+            <div class="post-inner">
+              <div class="post-header">
+                <a href="/Video/Dityacho-yunac-kij-atestacijnij-seminar"
+                  ><img src="http://img.youtube.com/vi/v2hQzNXhWEE/mqdefault.jpg" alt="" /></a
+                >
+              </div>
+              <div class="post-body">
+                <h2>
+                  <a href="/Video/Dityacho-yunac-kij-atestacijnij-seminar"
+                    >Дитячо-юнацький атестаційний семінар</a
+                  >
+                </h2>
+              </div>
+              <a href="/Video/Dityacho-yunac-kij-atestacijnij-seminar">
+                <div class="post-overlay">
+                  <div class="post-overlay-meta">
+                    <h2>Дитячо-юнацький атестаційний семінар</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="post span4 isotope-item">
+            <div class="post-inner">
+              <div class="post-header">
+                <a href="/Video/Kids-and-Youth-Aikido-seminar-in-Uzhhorod.-Aikido-for-Ukraine"
+                  ><img src="http://img.youtube.com/vi/twyOA9GObtI/mqdefault.jpg" alt="" /></a
+                >
+              </div>
+              <div class="post-body">
+                <h2>
+                  <a href="/Video/Kids-and-Youth-Aikido-seminar-in-Uzhhorod.-Aikido-for-Ukraine"
+                    >Kids and Youth Aikido seminar in Uzhhorod. Aikido for Ukraine.</a
+                  >
+                </h2>
+              </div>
+              <a href="/Video/Kids-and-Youth-Aikido-seminar-in-Uzhhorod.-Aikido-for-Ukraine">
+                <div class="post-overlay">
+                  <div class="post-overlay-meta">
+                    <h2>Kids and Youth Aikido seminar in Uzhhorod. Aikido for Ukraine.</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="post span4 isotope-item">
+            <div class="post-inner">
+              <div class="post-header">
+                <a href="/Video/Aikido-summer-school-2022"
+                  ><img src="http://img.youtube.com/vi/fOgl7ZaSMaM/mqdefault.jpg" alt="" /></a
+                >
+              </div>
+              <div class="post-body">
+                <h2><a href="/Video/Aikido-summer-school-2022">Aikido summer school 2022</a></h2>
+              </div>
+              <a href="/Video/Aikido-summer-school-2022">
+                <div class="post-overlay">
+                  <div class="post-overlay-meta">
+                    <h2>Aikido summer school 2022</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="post span4 isotope-item">
+            <div class="post-inner">
+              <div class="post-header">
+                <a href="/Video/Vazhkij-ale-nasichenij-podiyami-2022-rik"
+                  ><img src="http://img.youtube.com/vi/5gAFqzFs9fA/mqdefault.jpg" alt="" /></a
+                >
+              </div>
+              <div class="post-body">
+                <h2>
+                  <a href="/Video/Vazhkij-ale-nasichenij-podiyami-2022-rik"
+                    >Важкий, але насичений подіями 2022 рік</a
+                  >
+                </h2>
+              </div>
+              <a href="/Video/Vazhkij-ale-nasichenij-podiyami-2022-rik">
+                <div class="post-overlay">
+                  <div class="post-overlay-meta">
+                    <h2>Важкий, але насичений подіями 2022 рік</h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

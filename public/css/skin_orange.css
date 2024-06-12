@@ -1,0 +1,170 @@
+/* -------------------------------------------------------------------------------- /
+	[1]	SETUP - general settings, common classes
+/ -------------------------------------------------------------------------------- */
+
+	body { background:#afb19d; }
+	a { color:#efb700; }
+	::-moz-selection { background:#efb700; }
+	::selection { background:#efb700; }
+
+/* -------------------------------------------------------------------------------- /
+	[2]	LAYOUT
+/ -------------------------------------------------------------------------------- */
+
+	#main { background:#e7e9e2 url(../images/pattern/pattern_orange.png) 0 0 repeat; }
+
+/* -------------------------------------------------------------------------------- /
+	[3] HEADER
+/ -------------------------------------------------------------------------------- */
+
+	#header { background:#e7e9e2 url(../images/pattern/pattern_orange.png) 0 0 repeat; }
+	#header-info { background:#efb700; }
+
+/* -------------------------------------------------------------------------------- /
+	[4] NAVIGATION
+/ -------------------------------------------------------------------------------- */
+
+	#primary-navigation { background:#e7e9e2; }
+	#primary-navigation .menu > li:before { background:#e7e9e2; }
+	#primary-navigation .menu li a { background-color:#e7e9e2; }
+	#primary-navigation .menu > li:hover > a,
+	#primary-navigation .menu > li.current > a { color:#efb700; }
+	#primary-navigation .menu li > ul { background:#e7e9e2;	}
+	#primary-navigation .menu ul li:hover > a,
+	#primary-navigation .menu ul li.current > a { background-color:#efb700; }
+
+/* -------------------------------------------------------------------------------- /
+	[5] FOOTER
+/ -------------------------------------------------------------------------------- */
+
+	#top-footer { background:#efb700; }
+	#bottom { background:#e7e9e2 url(../images/pattern/pattern_orange.png) 0 0 repeat; }
+
+/* -------------------------------------------------------------------------------- /
+	[6] WIDGETS
+/ -------------------------------------------------------------------------------- */
+
+	.widget textarea,
+	.widget input[type="text"],
+	.widget input[type="password"],
+	.widget input[type="datetime"],
+	.widget input[type="datetime-local"],
+	.widget input[type="date"],
+	.widget input[type="month"],
+	.widget input[type="time"],
+	.widget input[type="week"],
+	.widget input[type="number"],
+	.widget input[type="email"],
+	.widget input[type="url"],
+	.widget input[type="search"],
+	.widget input[type="tel"],
+	.widget input[type="color"],
+	.widget .uneditable-input { background:#e7e9e2; }
+
+/* -------------------------------------------------------------------------------- /
+	[7] FORM ELEMENTS
+/ -------------------------------------------------------------------------------- */
+
+	.btn-style1 { background:#efb700; }
+
+/* -------------------------------------------------------------------------------- /
+	[8.1] CONTENT COMMON 
+/ -------------------------------------------------------------------------------- */
+
+	h2.main-title:before { background:#efb700; }
+
+/* -------------------------------------------------------------------------------- /
+	[8.2] SHORTCODES
+/ -------------------------------------------------------------------------------- */
+
+	.tabs > li.current a,
+	.tabs > li:hover a,
+	.tabs-content > li.current .tab-title a,
+	.tabs-content > li .tab-title a:hover { color:#efb700; }
+	.toggles > li.current a,
+	.toggles > li:hover a { color:#efb700; }
+	.progress-style1 .bar { background:#efb700; }
+	.highlight1 {
+		border-bottom:dotted 1px #efb700;
+		color:#efb700;
+	}
+	.highlight2 { background:#efb700; }
+
+/* -------------------------------------------------------------------------------- /
+	[8.4] BLOG
+/ -------------------------------------------------------------------------------- */
+
+	.post-body h2 a:hover { color:#efb700; }
+	.post-overlay { background:#efb700; }
+
+/* -------------------------------------------------------------------------------- /
+	[8.8] COMMENTS
+/ -------------------------------------------------------------------------------- */
+
+	.comment-container:hover { border-color:#efb700; }
+	#comment-list li .comment-container:hover h4 { color:#efb700; }
+
+/* -------------------------------------------------------------------------------- /
+	[9] PRICING TABLE
+/ -------------------------------------------------------------------------------- */
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-header h3,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header h3,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-header h3 { color:#efb700; }
+
+	.gw-go-col.gw-go-style1 .gw-go-coinf div,
+	.gw-go-col.gw-go-style1 .gw-go-coinb div { color:#efb700; }
+
+	.gw-go-col.gw-go-style1 .gw-go-btn,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-btn { color:#e7e9e2; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-btn,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-btn,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-btn { background:#efb700; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 { background:#efb700; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-header-top,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header-top,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-header-top { background:#efb700; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-header-bottom,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header-bottom,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-header-bottom {
+		background:#efb700;
+		border-top:solid 1px #efb700;
+	}
+	.gw-go-col.gw-go-style2 .gw-go-header h3,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header h3 { color:#efb700; }
+
+	.gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go-col.gw-go-style2 .gw-go-coinb,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb { border:solid 2px #efb700; }
+
+	.gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb div { background:#efb700; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinb div { color:#efb700; }
+
+	.gw-go-col.gw-go-style2 .gw-go-btn,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-btn { background:#efb700; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-btn,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-btn,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-btn { color:#efb700; }
+
+/* -------------------------------------------------------------------------------- /
+	[10.1] LAVALAMP PLUGIN
+/ -------------------------------------------------------------------------------- */
+
+	li.backLava { background:#e7e9e2; }

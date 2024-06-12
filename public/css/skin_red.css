@@ -1,0 +1,170 @@
+/* -------------------------------------------------------------------------------- /
+	[1]	SETUP - general settings, common classes
+/ -------------------------------------------------------------------------------- */
+
+	body { background:#bcb5a1; }
+	a { color:#e05c50; }
+	::-moz-selection { background:#e05c50; }
+	::selection { background:#e05c50; }
+
+/* -------------------------------------------------------------------------------- /
+	[2]	LAYOUT
+/ -------------------------------------------------------------------------------- */
+
+	#main { background:#eeede7; }
+
+/* -------------------------------------------------------------------------------- /
+	[3] HEADER
+/ -------------------------------------------------------------------------------- */
+
+	#header { background:#eeede7; }
+	#header-info { background:#e05c50; }
+
+/* -------------------------------------------------------------------------------- /
+	[4] NAVIGATION
+/ -------------------------------------------------------------------------------- */
+
+	#primary-navigation { background:#eeede7; }
+	#primary-navigation .menu > li:before { background:#eeede7; }
+	#primary-navigation .menu li a { background-color:#eeede7; }
+	#primary-navigation .menu > li:hover > a,
+	#primary-navigation .menu > li.current > a { color:#e05c50; }
+	#primary-navigation .menu li > ul { background:#eeede7;	}
+	#primary-navigation .menu ul li:hover > a,
+	#primary-navigation .menu ul li.current > a { background-color:#e05c50; }
+
+/* -------------------------------------------------------------------------------- /
+	[5] FOOTER
+/ -------------------------------------------------------------------------------- */
+
+	#top-footer { background:#e05c50; }
+	#bottom { background:#eeede7; }
+
+/* -------------------------------------------------------------------------------- /
+	[6] WIDGETS
+/ -------------------------------------------------------------------------------- */
+
+	.widget textarea,
+	.widget input[type="text"],
+	.widget input[type="password"],
+	.widget input[type="datetime"],
+	.widget input[type="datetime-local"],
+	.widget input[type="date"],
+	.widget input[type="month"],
+	.widget input[type="time"],
+	.widget input[type="week"],
+	.widget input[type="number"],
+	.widget input[type="email"],
+	.widget input[type="url"],
+	.widget input[type="search"],
+	.widget input[type="tel"],
+	.widget input[type="color"],
+	.widget .uneditable-input { background:#eeede7; }
+
+/* -------------------------------------------------------------------------------- /
+	[7] FORM ELEMENTS
+/ -------------------------------------------------------------------------------- */
+
+	.btn-style1 { background:#e05c50; }
+
+/* -------------------------------------------------------------------------------- /
+	[8.1] CONTENT COMMON 
+/ -------------------------------------------------------------------------------- */
+
+	h2.main-title:before { background:#e05c50; }
+
+/* -------------------------------------------------------------------------------- /
+	[8.2] SHORTCODES
+/ -------------------------------------------------------------------------------- */
+
+	.tabs > li.current a,
+	.tabs > li:hover a,
+	.tabs-content > li.current .tab-title a,
+	.tabs-content > li .tab-title a:hover { color:#e05c50; }
+	.toggles > li.current a,
+	.toggles > li:hover a { color:#e05c50; }
+	.progress-style1 .bar { background:#e05c50; }
+	.highlight1 {
+		border-bottom:dotted 1px #e05c50;
+		color:#e05c50;
+	}
+	.highlight2 { background:#e05c50; }
+
+/* -------------------------------------------------------------------------------- /
+	[8.4] BLOG
+/ -------------------------------------------------------------------------------- */
+
+	.post-body h2 a:hover { color:#e05c50; }
+	.post-overlay { background:#e05c50; }
+
+/* -------------------------------------------------------------------------------- /
+	[8.8] COMMENTS
+/ -------------------------------------------------------------------------------- */
+
+	.comment-container:hover { border-color:#e05c50; }
+	#comment-list li .comment-container:hover h4 { color:#e05c50; }
+
+/* -------------------------------------------------------------------------------- /
+	[9] PRICING TABLE
+/ -------------------------------------------------------------------------------- */
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-header h3,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header h3,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-header h3 { color:#e05c50; }
+
+	.gw-go-col.gw-go-style1 .gw-go-coinf div,
+	.gw-go-col.gw-go-style1 .gw-go-coinb div { color:#e05c50; }
+
+	.gw-go-col.gw-go-style1 .gw-go-btn,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-btn { color:#eeede7; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-btn,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-btn,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-btn { background:#e05c50; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 { background:#e05c50; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-header-top,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header-top,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-header-top { background:#e05c50; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-header-bottom,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header-bottom,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-header-bottom {
+		background:#e05c50;
+		border-top:solid 1px #e05c50;
+	}
+	.gw-go-col.gw-go-style2 .gw-go-header h3,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header h3 { color:#e05c50; }
+
+	.gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go-col.gw-go-style2 .gw-go-coinb,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb { border:solid 2px #e05c50; }
+
+	.gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb div { background:#e05c50; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinb div { color:#e05c50; }
+
+	.gw-go-col.gw-go-style2 .gw-go-btn,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-btn { background:#e05c50; }
+
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-btn,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-btn,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-btn { color:#e05c50; }
+
+/* -------------------------------------------------------------------------------- /
+	[10.1] LAVALAMP PLUGIN
+/ -------------------------------------------------------------------------------- */
+
+	li.backLava { background:#eeede7; }
