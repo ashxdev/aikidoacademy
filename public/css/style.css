@@ -3506,3 +3506,8 @@ td.number
 {
     text-align: right;
 }
+
+.centered {
+	display: block;
+  margin: 0 auto;
+}

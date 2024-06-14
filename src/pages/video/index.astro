@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/PageLayout.astro'
+import { getCollection } from 'astro:content'
+import HeaderImage from '../../components/HeaderImage.astro'
+
+const posts = (await getCollection('video')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+---
+
+<Layout title="Розклад семінарів" description="Розклад семінарів" keywords="Розклад семінарів">
+  <HeaderImage title="Відео" imageSrc="/media/blog.jpg" />
+
+  <div id="main" class="wrapper">
+    <div class="main-content container commonpage">
+      <h2 class="main-title">Наше відео</h2>
+      <div class="portfolio-isotope video-list">
+        <ul class="portfolio-posts row isotope">
+          {
+            posts.map((post) => (
+              <li class="post span4 isotope-item">
+                <div class="post-inner">
+                  <div class="post-header">
+                    <a href={`/video/${post.slug}`}>
+                      <img
+                        src={`http://img.youtube.com/vi/${post.data.videoId}/mqdefault.jpg`}
+                        alt={post.slug}
+                      />
+                    </a>
+                  </div>
+                  <div class="post-body">
+                    <h2>
+                      <a href={`/video/${post.slug}`}>{post.data.title}</a>
+                    </h2>
+                  </div>
+                  <a href={`/video/${post.slug}`}>
+                    <div class="post-overlay">
+                      <div class="post-overlay-meta">
+                        <h2>{post.data.title}</h2>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,47 +1,121 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
-
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string
+  description: string
+  image?: string
+  keywords?: string
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, keywords, description, image = '/blog-placeholder-1.jpg' } = Astro.props
 ---
 
-<!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{title || 'Головна'} - Академія айкідо Айкікай</title>
 
-<!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
-
-<!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
-
-<!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
-
-<!-- Open Graph / Facebook -->
+<meta
+  name="keywords"
+  content=`${keywords}, Академія айкідо Айкікай, Ужгород айкідо, айкідо ,aкадемія айкідо Айкікай, айкідо ужгород, айкідо чоп, айкідо закарпаття, aikidoacademy.com.ua`
+/>
+<meta name="description" content=`${description}, Академія Айкідо Айкікай` />
+<meta property="og:title" content=`${title} - Академія айкідо Айкікай` />
+<meta property="og:site_name" content="aikidoacademy.com.ua - Академія айкідо Айкікай" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:url" content="http://aikidoacademy.com.ua/" />
+<meta property="og:description" content=`${description}, Академія Айкідо Айкікай` />
+<meta property="og:image" content="/images/aikidoacademy.jpg" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="google-site-verification" content="CSNLfB17vEXAH67YYDTp6MS1o04f9GeLu-tpGMMuK-E" />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+<link href="/css/fonts.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/magnific-popup.css" />
+<link rel="stylesheet" type="text/css" href="/css/settings.css" />
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+  ;(function ($) {
+    var _rootUrl = '/',
+      _serverUrl = _rootUrl + 'ezjscore/',
+      _seperator = '@SEPERATOR$',
+      _prefUrl = _rootUrl + 'user/preferences'
+
+    // FIX: Ajax is broken on IE8 / IE7 on jQuery 1.4.x as it's trying to use the broken window.XMLHttpRequest object
+    if (window.XMLHttpRequest && window.ActiveXObject)
+      $.ajaxSettings.xhr = function () {
+        try {
+          return new window.ActiveXObject('Microsoft.XMLHTTP')
+        } catch (e) {}
+      }
+
+    // (static) jQuery.ez() uses jQuery.post() (Or jQuery.get() if post paramer is false)
+    //
+    // @param string callArgs
+    // @param object|array|string|false post Optional post values, uses get request if false or undefined
+    // @param function Optional callBack
+    function _ez(callArgs, post, callBack) {
+      callArgs = callArgs.join !== undefined ? callArgs.join(_seperator) : callArgs
+      var url = _serverUrl + 'call/'
+      if (post) {
+        var _token = '',
+          _tokenNode = document.getElementById('ezxform_token_js')
+        if (_tokenNode) _token = _tokenNode.getAttribute('title')
+        if (post.join !== undefined) {
+          // support serializeArray() format
+          post.push({ name: 'ezjscServer_function_arguments', value: callArgs })
+          post.push({ name: 'ezxform_token', value: _token })
+        } else if (typeof post === 'string') {
+          // string
+          post +=
+            (post ? '&' : '') +
+            'ezjscServer_function_arguments=' +
+            callArgs +
+            '&ezxform_token=' +
+            _token
+        } // object
+        else {
+          post['ezjscServer_function_arguments'] = callArgs
+          post['ezxform_token'] = _token
+        }
+        return $.post(url, post, callBack, 'json')
+      }
+      return $.get(url + encodeURIComponent(callArgs), {}, callBack, 'json')
+    }
+    _ez.url = _serverUrl
+    _ez.root_url = _rootUrl
+    _ez.seperator = _seperator
+    $.ez = _ez
+
+    $.ez.setPreference = function (name, value) {
+      var param = { Function: 'set_and_exit', Key: name, Value: value }
+      _tokenNode = document.getElementById('ezxform_token_js')
+      if (_tokenNode) param.ezxform_token = _tokenNode.getAttribute('title')
+
+      return $.post(_prefUrl, param)
+    }
+
+    // Method version, for loading response into elements
+    // NB: Does not use json (not possible with .load), so ezjscore/call will return string
+    function _ezLoad(callArgs, post, selector, callBack) {
+      callArgs = callArgs.join !== undefined ? callArgs.join(_seperator) : callArgs
+      var url = _serverUrl + 'call/'
+      if (post) {
+        post['ezjscServer_function_arguments'] = callArgs
+        post['ezxform_token'] = jQuery('#ezxform_token_js').attr('title')
+      } else url += encodeURIComponent(callArgs)
+
+      return this.load(url + (selector ? ' ' + selector : ''), post, callBack)
+    }
+    $.fn.ez = _ezLoad
+  })(jQuery)
+</script>
+<script type="text/javascript" src="/js/scripts.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/jquery.themepunch.plugins.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/jquery.themepunch.revolution.min.js" charset="utf-8"
+></script>

@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import HeaderImage from '../components/HeaderImage.astro'
+
+type Props = CollectionEntry<'video'>['data']
+
+const { title, description, keywords } = Astro.props
+---
+
+<html lang="uk-UA" class="js-on csstransforms csstransforms3d csstransitions">
+  <head>
+    <BaseHead {title} {keywords} {description} />
+  </head>
+  <body id="top" class="boxed stickymenu stickyfooter" style="">
+    <script type="text/javascript" src="/js/addthis_widget.js" async="async"></script>
+    <div id="wrapper" style="margin-bottom: 75px;">
+      <Header activeMenu="video" />
+
+      <HeaderImage title="Відео" imageSrc="/media/blog.jpg" />
+
+      <div id="main" class="wrapper">
+        <div class="main-content container commonpage">
+          <h2 class="main-title"></h2>
+          <slot />
+        </div>
+      </div>
+      <Footer />
+    </div>
+  </body>
+</html>

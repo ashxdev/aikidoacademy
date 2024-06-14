@@ -1,0 +1,16 @@
+---
+type Props = {
+  title: string
+  imageSrc: string
+}
+
+const { title, imageSrc } = Astro.props
+---
+
+<div id="header-panel" class="wrapper header-parallax">
+  <div class="header-image header-image-blog container" style=`background-image: url(${imageSrc})`>
+  </div>
+  <div class="page-title" style="bottom: 50px;">
+    <h1>{title}</h1>
+  </div>
+</div>
