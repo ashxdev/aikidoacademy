@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions'
 interface Props {
   title: string
   description: string
@@ -119,3 +120,4 @@ const { title, keywords, description, image = '/blog-placeholder-1.jpg' } = Astr
 <script type="text/javascript" src="/js/jquery.themepunch.plugins.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="/js/jquery.themepunch.revolution.min.js" charset="utf-8"
 ></script>
+<ViewTransitions />
