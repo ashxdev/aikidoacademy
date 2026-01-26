@@ -3,7 +3,6 @@ import Layout from '../layouts/PageLayout.astro'
 ---
 
 <Layout
-  activeMenu="rozklad-seminariv"
   title="Контакти"
   description="Контакти"
   keywords="Контакти"
@@ -19,60 +18,103 @@ import Layout from '../layouts/PageLayout.astro'
       <h1>Контакти</h1>
     </div>
   </div>
+
   <div id="main" class="wrapper">
     <div class="main-content container commonpage">
-      <!-- Container -->
-      <h2 class="main-title"></h2>
       <p class="sub-title">Інформація для зв'язку:</p>
+
       <div class="row">
+
+        <!-- Телефон -->
         <div class="span4">
           <div class="circle-box">
             <h4>
-              <span class="circle">
-                <span class="circle-border"></span>
-                <span class="circle-inner"><span class="circle-icon-tel"></span></span>
-              </span>
-              Моб. тел.
+              <a href="tel:+380509314601" class="link-style1">
+                <span class="circle">
+                  <span class="circle-border"></span>
+                  <span class="circle-inner">
+                    <span class="circle-icon-tel"></span>
+                  </span>
+                </span>
+                Моб. тел.
+              </a>
             </h4>
-            <p>+38 (050) 931 46 01</p>
+
+            <p>
+              <a href="tel:+380509314601" class="link-style1">
+                +38 (050) 931 46 01
+              </a>
+            </p>
           </div>
         </div>
+
+        <!-- Facebook -->
         <div class="span4">
           <div class="circle-box">
             <h4>
-              <span class="circle">
-                <span class="circle-border"></span>
-                <span class="circle-inner"><span class="circle-icon-facebook"></span></span>
-              </span>
-              Facebook
+              <a
+                href="https://www.facebook.com/aikidoaikikaiacademy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-style1"
+              >
+                <span class="circle">
+                  <span class="circle-border"></span>
+                  <span class="circle-inner">
+                    <span class="circle-icon-facebook"></span>
+                  </span>
+                </span>
+                Facebook
+              </a>
             </h4>
+
             <p>
               <a
-                target="_blank"
                 href="https://www.facebook.com/aikidoaikikaiacademy"
-                class="link-style1">Приєднуйся до нас</a
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-style1"
               >
+                Перейти на сторінку
+              </a>
             </p>
           </div>
         </div>
-        <div class="span3">
+
+        <!-- Email -->
+        <div class="span4">
           <div class="circle-box">
             <h4>
-              <span class="circle">
-                <span class="circle-border"></span>
-                <span class="circle-inner"><span class="circle-icon-mail"></span></span>
-              </span>
-              E-mail
-            </h4>
-            <p>
-              <a href="mailto:info@aikidoacademy.com.ua" class="link-style1"
-                >info@aikidoacademy.com.ua</a
+              <a
+                href="mailto:aikidoaikikai.academy@gmail.com"
+                class="link-style1"
               >
+                <span class="circle">
+                  <span class="circle-border"></span>
+                  <span class="circle-inner">
+                    <span class="circle-icon-mail"></span>
+                  </span>
+                </span>
+                E-mail
+              </a>
+            </h4>
+
+            <p>
+              <a
+                href="mailto:aikidoaikikai.academy@gmail.com"
+                class="link-style1"
+              >
+                aikidoaikikai.academy@gmail.com
+              </a>
             </p>
           </div>
         </div>
+
       </div>
-      <h2 class="main-title">Ми дамо відповіді на всі Ваші запитання</h2>
+
+      <h2 class="main-title">
+        Ми дамо відповіді на всі Ваші запитання
+      </h2>
     </div>
   </div>
 </Layout>
