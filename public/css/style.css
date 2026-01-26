@@ -3527,3 +3527,27 @@ td.number
   width: 100%;
   height: 100%;
 }
+
+/* Робимо кружок клікабельним */
+.circle-link {
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+}
+
+/* Вимикаємо перехоплення кліку внутрішніми спанами */
+.circle,
+.circle * {
+  pointer-events: none;
+}
+
+/* Додаємо іконку конверта, якої немає в темі */
+.circle-icon-mail-fixed {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/561/561127.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
