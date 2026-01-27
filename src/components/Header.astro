@@ -5,9 +5,7 @@ interface Props {
 
 const { activeMenu } = Astro.props;
 
-import { buildSearchIndex } from '../data/buildSearchIndex';
-
-const searchIndex = await buildSearchIndex();
+import Search from './Search.astro';
 ---
 
 <div id="header-info" class="wrapper">
@@ -77,27 +75,13 @@ const searchIndex = await buildSearchIndex();
           <span class="menu-icon-contact"></span>Контакти
         </a>
       </li>
-
-      <li class="menu-search">
-        <a id="open-search" style="cursor:pointer;">
-        <span class="search-icon"></span> Пошук
-        </a>
-      </li>
     </ul>
 
-    <!-- Пошук -->
-    <div id="search-box" class="search-box">
-      <input
-        type="text"
-        id="search-input"
-        placeholder="Пошук по сайту..."
-        autocomplete="off"
-      />
-      <div id="search-results"></div>
-    </div>
+    <!-- 🔍 Пошук -->
+    <Search />
   </div>
- <script src="/search.js"></script>
 </div>
+
 
 
 

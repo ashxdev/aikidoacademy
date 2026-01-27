@@ -3562,17 +3562,10 @@ td.number
   float: right;
 }
 
-.search-box {
-  display: none;
-  position: fixed;          /* ось це головне */
-  top: 90px;
-  right: 40px;
+.search-wrapper {
+  position: relative;
   width: 320px;
-  background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  padding: 10px;
-  z-index: 9999;           /* вище за все меню */
+  margin-left: auto;
 }
 
 #search-input {
@@ -3582,9 +3575,15 @@ td.number
 }
 
 #search-results {
-  margin-top: 8px;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
   max-height: 300px;
   overflow-y: auto;
+  z-index: 9999;
 }
 
 #search-results a {
@@ -3597,6 +3596,7 @@ td.number
 #search-results a:hover {
   background: #f3f3f3;
 }
+
 
 .search-icon::before {
   content: "🔍";
