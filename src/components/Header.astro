@@ -10,10 +10,6 @@ import { buildSearchIndex } from '../data/buildSearchIndex';
 const searchIndex = await buildSearchIndex();
 ---
 
-import initSearch from '../scripts/search.js';
-
----
-
 <div id="header-info" class="wrapper">
   <div class="container fullwidth">
     <ul>
@@ -103,10 +99,9 @@ import initSearch from '../scripts/search.js';
 </div>
 
 <script is:inline>
-{`
 document.addEventListener('DOMContentLoaded', function () {
 
-  const searchIndex = ${JSON.stringify(searchIndex)};
+  const searchIndex = JSON.parse('${JSON.stringify(searchIndex)}');
 
   const btn = document.getElementById('open-search');
   const box = document.getElementById('search-box');
@@ -146,8 +141,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
-`}
 </script>
+
 
 
 
