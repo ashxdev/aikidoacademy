@@ -105,13 +105,13 @@ const searchIndex = await buildSearchIndex();
 </script>
 
 <!-- Логіка пошуку -->
-<script is:inline define:vars={{ searchIndex }}>
-  const btn = document.getElementById('open-search');
-  const box = document.getElementById('search-box');
-  const input = document.getElementById('search-input');
-  const results = document.getElementById('search-results');
+<script>
+  const searchIndex = JSON.parse(`{JSON.stringify(searchIndex)}`);
 
-  const searchIndexData = searchIndex;
+const btn = document.getElementById('open-search') as HTMLElement | null;
+const box = document.getElementById('search-box') as HTMLElement | null;
+const input = document.getElementById('search-input') as HTMLInputElement | null;
+const results = document.getElementById('search-results') as HTMLElement | null;
 
   btn?.addEventListener('click', () => {
     if (!box || !input) return;
@@ -127,7 +127,7 @@ const searchIndex = await buildSearchIndex();
 
     if (q.length < 2) return;
 
-    const filtered = searchIndexData.filter(item =>
+    const filtered = searchIndex.filter(item =>
       item.title.toLowerCase().includes(q) ||
       item.content.includes(q)
     );
@@ -140,4 +140,4 @@ const searchIndex = await buildSearchIndex();
     });
   });
 </script>
-</>
+
