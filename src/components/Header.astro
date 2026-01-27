@@ -106,48 +106,49 @@ const searchIndex = await buildSearchIndex();
 
 <!-- Логіка пошуку -->
 <script>
-  const searchIndex = JSON.parse(`{JSON.stringify(searchIndex)}`);
+  document.addEventListener('DOMContentLoaded', () => {
 
-const btn = document.getElementById('open-search') as HTMLElement | null;
-const box = document.getElementById('search-box') as HTMLElement | null;
-const input = document.getElementById('search-input') as HTMLInputElement | null;
-const results = document.getElementById('search-results') as HTMLElement | null;
+    const searchIndex = JSON.parse(`{JSON.stringify(searchIndex)}`);
 
-  btn?.addEventListener('click', () => {
-    if (!box || !input) return;
-    box.style.display = box.style.display === 'block' ? 'none' : 'block';
-    input.focus();
-  });
+    const btn = document.getElementById('open-search') as HTMLElement | null;
+    const box = document.getElementById('search-box') as HTMLElement | null;
+    const input = document.getElementById('search-input') as HTMLInputElement | null;
+    const results = document.getElementById('search-results') as HTMLElement | null;
 
-  input?.addEventListener('input', () => {
-    if (!results || !input) return;
+    if (!btn || !box || !input || !results) return;
 
-    const q = input.value.toLowerCase();
-    results.innerHTML = '';
-
-    if (q.length < 2) return;
-
-    const filtered = searchIndex.filter(item =>
-      item.title.toLowerCase().includes(q) ||
-      item.content.includes(q)
-    );
-
-    filtered.slice(0, 10).forEach(item => {
-      const a = document.createElement('a');
-      a.href = item.url;
-      a.textContent = item.title;
-      results.appendChild(a);
+    btn.addEventListener('click', () => {
+      box.style.display = box.style.display === 'block' ? 'none' : 'block';
+      input.focus();
     });
+
+    input.addEventListener('input', () => {
+      const q = input.value.toLowerCase();
+      results.innerHTML = '';
+
+      if (q.length < 2) return;
+
+      const filtered = searchIndex.filter(item =>
+        item.title.toLowerCase().includes(q) ||
+        item.content.includes(q)
+      );
+
+      filtered.slice(0, 10).forEach(item => {
+        const a = document.createElement('a');
+        a.href = item.url;
+        a.textContent = item.title;
+        results.appendChild(a);
+      });
+    });
+
     document.addEventListener('click', (e) => {
-  if (!box || !btn) return;
+      const target = e.target as Node;
+      if (!box.contains(target) && !btn.contains(target)) {
+        box.style.display = 'none';
+      }
+    });
 
-  const target = e.target as Node;
-
-  if (!box.contains(target) && !btn.contains(target)) {
-    box.style.display = 'none';
-  }
-});
   });
-  
 </script>
+
 
