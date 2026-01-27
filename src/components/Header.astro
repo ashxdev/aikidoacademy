@@ -10,6 +10,10 @@ import { buildSearchIndex } from '../data/buildSearchIndex';
 const searchIndex = await buildSearchIndex();
 ---
 
+import initSearch from '../scripts/search.js';
+
+---
+
 <div id="header-info" class="wrapper">
   <div class="container fullwidth">
     <ul>
@@ -98,57 +102,56 @@ const searchIndex = await buildSearchIndex();
   </div>
 </div>
 
-<!-- Передаємо індекс у браузер -->
- <>
-<script is:inline define:vars={{ searchIndex }}>
-  const SEARCH_INDEX = searchIndex;
-</script>
+<script is:inline>
+{`
+document.addEventListener('DOMContentLoaded', function () {
 
-<!-- Логіка пошуку -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
+  const searchIndex = ${JSON.stringify(searchIndex)};
 
-    const searchIndex = JSON.parse(`{JSON.stringify(searchIndex)}`);
+  const btn = document.getElementById('open-search');
+  const box = document.getElementById('search-box');
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
 
-    const btn = document.getElementById('open-search') as HTMLElement | null;
-    const box = document.getElementById('search-box') as HTMLElement | null;
-    const input = document.getElementById('search-input') as HTMLInputElement | null;
-    const results = document.getElementById('search-results') as HTMLElement | null;
+  if (!btn || !box || !input || !results) return;
 
-    if (!btn || !box || !input || !results) return;
-
-    btn.addEventListener('click', () => {
-      box.style.display = box.style.display === 'block' ? 'none' : 'block';
-      input.focus();
-    });
-
-    input.addEventListener('input', () => {
-      const q = input.value.toLowerCase();
-      results.innerHTML = '';
-
-      if (q.length < 2) return;
-
-      const filtered = searchIndex.filter(item =>
-        item.title.toLowerCase().includes(q) ||
-        item.content.includes(q)
-      );
-
-      filtered.slice(0, 10).forEach(item => {
-        const a = document.createElement('a');
-        a.href = item.url;
-        a.textContent = item.title;
-        results.appendChild(a);
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      const target = e.target as Node;
-      if (!box.contains(target) && !btn.contains(target)) {
-        box.style.display = 'none';
-      }
-    });
-
+  btn.addEventListener('click', function () {
+    box.style.display = box.style.display === 'block' ? 'none' : 'block';
+    input.focus();
   });
+
+  input.addEventListener('input', function () {
+    const q = input.value.toLowerCase();
+    results.innerHTML = '';
+
+    if (q.length < 2) return;
+
+    const filtered = searchIndex.filter(function(item) {
+      return item.title.toLowerCase().includes(q) ||
+             item.content.includes(q);
+    });
+
+    filtered.slice(0, 10).forEach(function(item) {
+      const a = document.createElement('a');
+      a.href = item.url;
+      a.textContent = item.title;
+      results.appendChild(a);
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!box.contains(e.target) && !btn.contains(e.target)) {
+      box.style.display = 'none';
+    }
+  });
+
+});
+`}
 </script>
+
+
+
+
+
 
 
