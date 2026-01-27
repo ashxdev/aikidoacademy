@@ -3551,3 +3551,43 @@ td.number
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.menu-search {
+  float: right;
+}
+
+.search-box {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 55px;
+  width: 320px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 10px;
+  z-index: 999;
+}
+
+#search-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+#search-results {
+  margin-top: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#search-results a {
+  display: block;
+  padding: 6px;
+  text-decoration: none;
+  color: #333;
+}
+
+#search-results a:hover {
+  background: #f3f3f3;
+}
