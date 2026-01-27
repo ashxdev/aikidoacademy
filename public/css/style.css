@@ -1073,7 +1073,8 @@
 	/* hide info boxes on home */
 	#hide-info-container { 
 		margin-top:-100px; 
-		-webkit-transform-style:preserve-3d;
+		transform-style: preserve-3d;
+-webkit-transform-style: preserve-3d;
 	}
 	[class^="hide-info-box"] {
 		border-top:solid 5px transparent;
@@ -1099,7 +1100,8 @@
 		visibility:hidden;
 		width:100%;
 		z-index:-1;
-		-webkit-transform-style:preserve-3d;			
+		transform-style: preserve-3d;
+-webkit-transform-style: preserve-3d;			
 	}
 	[class^="hide-info-box"]:hover .hide-info-box-content {
 		bottom:100%;
@@ -1123,7 +1125,8 @@
 		-o-transition:all 0.2s ease-in-out;
 		-webkit-transition:all 0.2s ease-in-out;
 		transition:all 0.2s ease-in-out;
-		-webkit-transform-style:preserve-3d;
+		transform-style: preserve-3d;
+-webkit-transform-style: preserve-3d;
 	}
 
 	[class^="hide-info-box"]:hover .circle-inner { color:#fff; }
@@ -1783,7 +1786,8 @@
 		margin:0;
 		padding:0;
 		width:100%;
-		-webkit-transform-style:preserve-3d;
+		transform-style: preserve-3d;
+-webkit-transform-style: preserve-3d;
 	}
 	.slider .slides li:first-child, 
 	.js-on .slider .slides li, 
@@ -1816,7 +1820,8 @@
 		-o-transition:all 0.2s ease-in-out;
 		-webkit-transition:all 0.2s ease-in-out;
 		transition:all 0.2s ease-in-out;
-		-webkit-transform-style:preserve-3d;			
+		transform-style: preserve-3d;
+-webkit-transform-style: preserve-3d;			
 	}
 	
 	/* slider controls (outside slider) */
@@ -1974,7 +1979,8 @@
 		visibility:hidden;
 		width:100%;
 		z-index:1;
-		-webkit-transform-style:preserve-3d;
+		transform-style: preserve-3d;
+-webkit-transform-style: preserve-3d;
 	}
 	.has-overlay .post-inner:hover .post-overlay-meta { 
 		top:27px;
@@ -2399,14 +2405,14 @@
 	    border:none !important;
 		height:auto !important;
     	margin:0 !important;
-        paddig:0 !important;        
+        padding:0 !important;        
         max-width:100% !important;
 		width:100% !important;
 	}
     .gw-go audio, 
     .gw-go video {
     	margin:0;
-        paddig:0;
+        padding:0;
 		/*height:auto !important;*/
         max-width:100% !important;
 		width:100% !important;        

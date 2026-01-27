@@ -1,15 +1,13 @@
 ---
-import { buildSearchIndex } from '@/data/buildSearchIndex';
-
-const searchIndex = await buildSearchIndex();
----
-
----
 interface Props {
-  activeMenu?: string
+  activeMenu?: string;
 }
 
-const { activeMenu } = Astro.props
+const { activeMenu } = Astro.props;
+
+import { buildSearchIndex } from '../data/buildSearchIndex';
+
+const searchIndex = await buildSearchIndex();
 ---
 
 <div id="header-info" class="wrapper">
@@ -17,110 +15,118 @@ const { activeMenu } = Astro.props
     <ul>
       <li><span class="header-icon-pin"></span>88000 Ужгород, Україна</li>
       <li>
-        <span class="header-icon-mail"></span><a
-          href="mailto:aikidoaikikai.academy@gmail.com"
-          class="link-style2">aikidoaikikai.academy@gmail.com</a
-        >
+        <span class="header-icon-mail"></span>
+        <a href="mailto:aikidoaikikai.academy@gmail.com" class="link-style2">
+          aikidoaikikai.academy@gmail.com
+        </a>
       </li>
       <li>
-  <span class="header-icon-phone"></span>
-  <a href="tel:+380509314601" class="link-style2">
-    +38 (050) 931 46 01
-  </a>
-</li>
-
+        <span class="header-icon-phone"></span>
+        <a href="tel:+380509314601" class="link-style2">
+          +38 (050) 931 46 01
+        </a>
+      </li>
     </ul>
   </div>
 </div>
+
 <div id="header" class="wrapper">
-  <div id="logo" class="container fullwidth" style="padding-top: 20px; padding-bottom: 20px;">
+  <div id="logo" class="container fullwidth" style="padding: 20px 0;">
     <a href="/"></a>
   </div>
-  <div id="primary-navigation-placholder" style="height: 45px; display: none;"></div><div
-    id="primary-navigation"
-    class="container fullwidth"
-  >
-    <a class="menu-responsive"
-      ><span class="menu-icon-nav"></span><span class="menu-title">Navigation</span></a
-    >
-    <ul class="menu clearfix" style="display: block;">
+
+  <div id="primary-navigation" class="container fullwidth">
+    <a class="menu-responsive">
+      <span class="menu-icon-nav"></span>
+      <span class="menu-title">Navigation</span>
+    </a>
+
+    <ul class="menu clearfix">
       <li class:list={[{ selectedLava: activeMenu === 'home' }]}>
-        <a class:list={[{ current: activeMenu === 'home' }]} href="/" style="padding-left: 20px;">
+        <a class:list={[{ current: activeMenu === 'home' }]} href="/">
           <span class="menu-icon-home"></span>Головна
         </a>
       </li>
+
       <li class:list={[{ selectedLava: activeMenu === 'about' }]}>
-        <a
-          class:list={[{ current: activeMenu === 'about' }]}
-          href="/about"
-          style="padding-left: 20px;"
-        >
+        <a class:list={[{ current: activeMenu === 'about' }]} href="/about">
           <span class="menu-icon-about"></span>Про нас
         </a>
       </li>
+
       <li>
-        <a href="/video" style="padding-left: 20px;">
+        <a href="/video">
           <span class="menu-icon-features"></span>Відео
         </a>
       </li>
+
       <li>
-        <a href="/blog" style="padding-left: 20px;">
+        <a href="/blog">
           <span class="menu-icon-blog"></span>Новини
         </a>
       </li>
+
       <li>
-        <a href="/rozklad-seminariv" style="padding-left: 20px;">
-          <span class="menu-icon-"></span>Розклад семінарів
+        <a href="/rozklad-seminariv">
+          Розклад семінарів
         </a>
       </li>
+
       <li class:list={[{ selectedLava: activeMenu === 'contacts' }]}>
-        <a
-          class:list={[{ current: activeMenu === 'contacts' }]}
-          href="/contacts"
-          style="padding-left: 20px;"
-        >
+        <a class:list={[{ current: activeMenu === 'contacts' }]} href="/contacts">
           <span class="menu-icon-contact"></span>Контакти
         </a>
       </li>
+
       <li class="menu-search">
-  <a id="open-search" style="padding-left: 20px; cursor:pointer;">
-    <span class="menu-icon-search"></span>Пошук
-  </a>
-</li>
+        <a id="open-search" style="cursor:pointer;">
+          🔍 Пошук
+        </a>
+      </li>
     </ul>
+
+    <!-- Пошук -->
     <div id="search-box" class="search-box">
-  <input
-    type="text"
-    id="search-input"
-    placeholder="Пошук по сайту..."
-    autocomplete="off"
-  />
-  <div id="search-results"></div>
-</div>
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Пошук по сайту..."
+        autocomplete="off"
+      />
+      <div id="search-results"></div>
+    </div>
   </div>
-  <script is:inline>
-  const SEARCH_INDEX = {JSON.stringify(searchIndex)};
+</div>
+
+<!-- Передаємо індекс у браузер -->
+<script is:inline define:vars={{ searchIndex }}>
+  const SEARCH_INDEX = searchIndex;
 </script>
-<script>
+
+<!-- Логіка пошуку -->
+<script is:inline define:vars={{ searchIndex }}>
   const btn = document.getElementById('open-search');
   const box = document.getElementById('search-box');
   const input = document.getElementById('search-input');
   const results = document.getElementById('search-results');
 
-  const searchIndex = SEARCH_INDEX;
+  const searchIndexData = searchIndex;
 
-  btn.addEventListener('click', () => {
+  btn?.addEventListener('click', () => {
+    if (!box || !input) return;
     box.style.display = box.style.display === 'block' ? 'none' : 'block';
     input.focus();
   });
 
-  input.addEventListener('input', () => {
+  input?.addEventListener('input', () => {
+    if (!results || !input) return;
+
     const q = input.value.toLowerCase();
     results.innerHTML = '';
 
     if (q.length < 2) return;
 
-    const filtered = searchIndex.filter(item =>
+    const filtered = searchIndexData.filter(item =>
       item.title.toLowerCase().includes(q) ||
       item.content.includes(q)
     );
@@ -133,4 +139,4 @@ const { activeMenu } = Astro.props
     });
   });
 </script>
-</div>
+
