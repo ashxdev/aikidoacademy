@@ -3564,15 +3564,15 @@ td.number
 
 .search-box {
   display: none;
-  position: absolute;
-  right: 20px;
-  top: 55px;
+  position: fixed;          /* ось це головне */
+  top: 90px;
+  right: 40px;
   width: 320px;
   background: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   padding: 10px;
-  z-index: 999;
+  z-index: 9999;           /* вище за все меню */
 }
 
 #search-input {
@@ -3596,4 +3596,11 @@ td.number
 
 #search-results a:hover {
   background: #f3f3f3;
+}
+
+.search-icon::before {
+  content: "🔍";
+  filter: grayscale(100%);
+  opacity: 0.6;
+  margin-right: 6px;
 }

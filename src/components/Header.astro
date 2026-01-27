@@ -80,7 +80,7 @@ const searchIndex = await buildSearchIndex();
 
       <li class="menu-search">
         <a id="open-search" style="cursor:pointer;">
-          🔍 Пошук
+        <span class="search-icon"></span> Пошук
         </a>
       </li>
     </ul>
@@ -138,6 +138,16 @@ const results = document.getElementById('search-results') as HTMLElement | null;
       a.textContent = item.title;
       results.appendChild(a);
     });
+    document.addEventListener('click', (e) => {
+  if (!box || !btn) return;
+
+  const target = e.target as Node;
+
+  if (!box.contains(target) && !btn.contains(target)) {
+    box.style.display = 'none';
+  }
+});
   });
+  
 </script>
 
