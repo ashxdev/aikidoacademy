@@ -99,6 +99,7 @@ const searchIndex = await buildSearchIndex();
 </div>
 
 <!-- Передаємо індекс у браузер -->
+ <>
 <script is:inline define:vars={{ searchIndex }}>
   const SEARCH_INDEX = searchIndex;
 </script>
@@ -139,4 +140,4 @@ const searchIndex = await buildSearchIndex();
     });
   });
 </script>
-
+</>
