@@ -1,6 +1,7 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
 
-  const searchIndex = window.SEARCH_INDEX || [];
+  const res = await fetch('/search-index.json');
+  const searchIndex = await res.json();
 
   const btn = document.getElementById('open-search');
   const box = document.getElementById('search-box');
