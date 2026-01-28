@@ -17,9 +17,7 @@ const { title, description, keywords, activeMenu } = Astro.props
   <head>
     <BaseHead {title} {keywords} {description} />
   </head>
-
   <body id="top" class="boxed stickymenu stickyfooter">
-    <script src="/js/addthis_widget.js" async></script>
 
     <div id="wrapper" style="margin-bottom: 75px;">
       <Header {activeMenu} />
@@ -27,7 +25,8 @@ const { title, description, keywords, activeMenu } = Astro.props
       <Footer />
     </div>
 
-    <!-- ПІДКЛЮЧЕННЯ ПОШУКУ (правильно для Astro) -->
-<script src="/search.js"></script>
+    <!-- ПРАВИЛЬНЕ підключення пошуку -->
+    <script src="/search.js"></script>
+
   </body>
 </html>
