@@ -17,6 +17,7 @@ const { title, description, keywords, activeMenu } = Astro.props
   <head>
     <BaseHead {title} {keywords} {description} />
   </head>
+  <script src="/search.js"></script>
   <body id="top" class="boxed stickymenu stickyfooter" style="">
     <script type="text/javascript" src="/js/addthis_widget.js" async="async"></script>
 
@@ -27,9 +28,6 @@ const { title, description, keywords, activeMenu } = Astro.props
 
       <Footer />
     </div>
-
-    <!-- 🔥 ОЦЕ ДОДАЙ СЮДИ -->
-    <script type="module" src="/src/scripts/search.ts"></script>
 
   </body>
 </html>

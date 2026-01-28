@@ -5,7 +5,6 @@ interface Props {
 
 const { activeMenu } = Astro.props;
 
-import Search from './Search.astro';
 ---
 
 <div id="header-info" class="wrapper">
@@ -77,9 +76,17 @@ import Search from './Search.astro';
       </li>
     </ul>
 
-    <!-- 🔍 Пошук -->
-    <Search />
-  </div>
+    </div>
+  <div id="search-box" class="search-box">
+  <input
+    type="text"
+    id="search-input"
+    placeholder="Пошук по сайту..."
+    autocomplete="off"
+  />
+  <div id="search-results"></div>
+</div>
+
 </div>
 
 
