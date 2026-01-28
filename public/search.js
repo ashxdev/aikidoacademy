@@ -1,3 +1,4 @@
+console.log('SEARCH JS WORKS');
 const input = document.getElementById('search-input');
 const results = document.getElementById('search-results');
 
