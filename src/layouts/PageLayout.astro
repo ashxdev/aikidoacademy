@@ -13,20 +13,21 @@ interface Props {
 const { title, description, keywords, activeMenu } = Astro.props
 ---
 
-<html lang="uk-UA" class="js-on csstransforms csstransforms3d csstransitions">
+<html lang="uk-UA">
   <head>
     <BaseHead {title} {keywords} {description} />
   </head>
-  <body id="top" class="boxed stickymenu stickyfooter" style="">
-    <script type="text/javascript" src="/js/addthis_widget.js" async="async"></script>
+
+  <body id="top" class="boxed stickymenu stickyfooter">
+    <script src="/js/addthis_widget.js" async></script>
 
     <div id="wrapper" style="margin-bottom: 75px;">
       <Header {activeMenu} />
-
       <slot />
-
       <Footer />
     </div>
-      <script src="/search.js"></script>
+
+    <!-- ПІДКЛЮЧЕННЯ ПОШУКУ (правильно для Astro) -->
+<script src="/search.js"></script>
   </body>
 </html>
