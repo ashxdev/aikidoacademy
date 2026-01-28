@@ -1,9 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const input = document.getElementById('search-input');
-  const results = document.getElementById('search-results');
+const input = document.getElementById('search-input');
+const results = document.getElementById('search-results');
 
-  if (!input || !results) return;
-
+if (input && results) {
   input.addEventListener('input', () => {
     const q = input.value.toLowerCase();
     results.innerHTML = '';
@@ -21,4 +19,4 @@ document.addEventListener('DOMContentLoaded', () => {
       results.appendChild(a);
     }
   });
-});
+}
