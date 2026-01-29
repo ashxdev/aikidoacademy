@@ -74,10 +74,15 @@ const { activeMenu } = Astro.props;
           <span class="menu-icon-contact"></span>Контакти
         </a>
       </li>
+      <li class="menu-search">
+  <a id="open-search" style="cursor:pointer;">
+    <span class="search-icon"></span> Пошук
+  </a>
+</li>
     </ul>
 
     </div>
-  <div id="search-box" class="search-box">
+<div id="search-box" class="search-box" style="display:none;">
   <input
     type="text"
     id="search-input"

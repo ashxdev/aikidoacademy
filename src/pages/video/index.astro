@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/PageLayout.astro'
+import MainLayout from '../../layouts/MainLayout.astro'
 import { getCollection } from 'astro:content'
 import HeaderImage from '../../components/HeaderImage.astro'
 
@@ -8,7 +8,7 @@ const posts = (await getCollection('video')).sort(
 )
 ---
 
-<Layout title="Відео" description="Відео" keywords="Відео">
+<MainLayout title="Відео" description="Відео" keywords="Відео">
   <HeaderImage title="Відео" imageSrc="/media/blog.jpg" />
 
   <div id="main" class="wrapper">
@@ -48,4 +48,4 @@ const posts = (await getCollection('video')).sort(
       </div>
     </div>
   </div>
-</Layout>
+</MainLayout>

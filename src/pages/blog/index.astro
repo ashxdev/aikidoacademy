@@ -1,15 +1,17 @@
 ---
-import Layout from '../../layouts/PageLayout.astro'
+import MainLayout from '../../layouts/MainLayout.astro'
 import { getCollection } from 'astro:content'
 import HeaderImage from '../../components/HeaderImage.astro'
 import FormattedDate from '../../components/FormattedDate.astro'
 
 const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) =>
+    new Date(b.data.pubDate ?? 0).getTime() -
+    new Date(a.data.pubDate ?? 0).getTime()
 )
 ---
 
-<Layout title="Новини" description="Новини" keywords="Новини">
+<MainLayout title="Новини" description="Новини" keywords="Новини">
   <HeaderImage title="Новини" imageSrc="/media/blog.jpg" />
 
   <div id="main" class="wrapper">
@@ -29,7 +31,7 @@ const posts = (await getCollection('blog')).sort(
                     </div>
                     <div class="post-body">
                       <div class="">
-                        <FormattedDate date={post.data.pubDate} />
+                        <FormattedDate date={post.data.pubDate ?? new Date()} />
                       </div>
                       <h2>
                         <a href={`/blog/${post.slug}`}>{post.data.title}</a>
@@ -46,4 +48,4 @@ const posts = (await getCollection('blog')).sort(
       </div>
     </div>
   </div>
-</Layout>
+</MainLayout>

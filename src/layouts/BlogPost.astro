@@ -24,7 +24,8 @@ const { title, pubDate, description, keywords, heroImage } = Astro.props
 
       <div id="main" class="wrapper">
         <div class="main-content container commonpage">
-          <div class="post-date"><FormattedDate date={pubDate} /></div>
+          <div class="post-date">{pubDate && <FormattedDate date={pubDate} />}
+</div>
           <h2 class="main-title">
             {title}
             <span class="title-meta clearfix">
