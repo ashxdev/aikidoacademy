@@ -3604,3 +3604,18 @@ td.number
   opacity: 0.6;
   margin-right: 6px;
 }
+
+#search-box {
+  position: absolute;
+  z-index: 10000;
+}
+
+@media (max-width: 768px) {
+  #search-box {
+    position: fixed;
+    top: 70px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+  }
+}
