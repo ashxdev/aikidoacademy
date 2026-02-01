@@ -18,32 +18,35 @@ const posts = (await getCollection('blog')).sort(
     <div class="main-content container commonpage">
       <h2 class="main-title">Новини</h2>
       <div class="blog">
-        <ul class="row">
-          {
-            posts.map((post) => (
-              <>
-                <li class="post span6 has-overlay">
-                  <div class="post-inner">
-                    <div class="post-header">
-                      <a href={`/blog/${post.slug}`}>
-                        <img src={post.data.heroImage} alt={post.slug} />
-                      </a>
-                    </div>
-                    <div class="post-body">
-                      <div class="">
-                        <FormattedDate date={post.data.pubDate ?? new Date()} />
-                      </div>
-                      <h2>
-                        <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-                      </h2>
-                      <div class="post-excerpt">{post.data.description}</div>
-                      <ul class="post-meta clearfix" />
-                    </div>
-                  </div>
-                </li>
-              </>
-            ))
-          }
+        <ul class="blog-grid">
+{
+  posts.map((post) => (
+    <li class="post span6 has-overlay">
+      <div class="post-inner">
+        <div class="post-header">
+          <a href={`/blog/${post.slug}`}>
+            <img src={post.data.heroImage} alt={post.data.title} />
+          </a>
+        </div>
+
+        <div class="post-body">
+          <div>
+            <FormattedDate date={post.data.pubDate ?? new Date()} />
+          </div>
+
+          <h2>
+            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+          </h2>
+
+          <div class="post-excerpt">
+            {post.data.description}
+          </div>
+        </div>
+      </div>
+    </li>
+  ))
+}
+
         </ul>
       </div>
     </div>

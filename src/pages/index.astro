@@ -1,4 +1,5 @@
 ---
+import YouTube from '../components/YouTube.astro'
 import Layout from '../layouts/HomeLayout.astro'
 ---
 
@@ -142,7 +143,7 @@ import Layout from '../layouts/HomeLayout.astro'
         <div class="hide-info-box-style3 span4">
           <div class="hide-info-box-content">
             <div class="hide-info-box-header">
-              <img src="/media/3_306x205.jpg" alt="Про айкідо Академію СІЧ" />
+              <img src="/media/3_306x205.jpg" alt="Про айкідо Академію Айкідо Айкікай" />
             </div>
             <p class="tcenter">Про академію</p>
             <p><a href="/about" class="btn btn-style1 hide-info-btn">Читати</a></p>
@@ -160,146 +161,48 @@ import Layout from '../layouts/HomeLayout.astro'
         </div>
         <!-- /hide info box -->
       </div>
-      <!-- /#hide-info-container -->
-      <h2 class="main-title">
-        Наше відeо
-        <span class="title-meta-text"><a href="/video" class="link-style3">Усі відео »</a></span>
-      </h2>
+<div class="home-clean">
 
-      <div class="portfolio video-list">
-        <ul class="portfolio-posts row">
-          <li class="post span4 isotope-item">
-            <div class="post-inner">
-              <div class="post-header">
-                <a href="/video/litnij-tabir-ajkido-2023"
-                  ><img src="http://img.youtube.com/vi/LUt7RX67aXM/mqdefault.jpg" alt="" /></a
-                >
-              </div>
-              <div class="post-body">
-                <h2><a href="/video/litnij-tabir-ajkido-2023">Літній табір айкідо 2023</a></h2>
-              </div>
-              <a href="/video/litnij-tabir-ajkido-2023">
-                <div class="post-overlay">
-                  <div class="post-overlay-meta">
-                    <h2>Літній табір айкідо 2023</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="post span4 isotope-item">
-            <div class="post-inner">
-              <div class="post-header">
-                <a href="/video/litnya-shkola-ajkido-2023-pidlitki"
-                  ><img src="http://img.youtube.com/vi/78sxiIxRxOg/mqdefault.jpg" alt="" /></a
-                >
-              </div>
-              <div class="post-body">
-                <h2>
-                  <a href="/video/litnya-shkola-ajkido-2023-pidlitki"
-                    >Літня школа айкідо 2023 (підлітки)</a
-                  >
-                </h2>
-              </div>
-              <a href="/video/litnya-shkola-ajkido-2023-pidlitki">
-                <div class="post-overlay">
-                  <div class="post-overlay-meta">
-                    <h2>Літня школа айкідо 2023 (підлітки)</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="post span4 isotope-item">
-            <div class="post-inner">
-              <div class="post-header">
-                <a href="/video/dityacho-yunac-kij-atestacijnij-seminar"
-                  ><img src="http://img.youtube.com/vi/v2hQzNXhWEE/mqdefault.jpg" alt="" /></a
-                >
-              </div>
-              <div class="post-body">
-                <h2>
-                  <a href="/video/dityacho-yunac-kij-atestacijnij-seminar"
-                    >Дитячо-юнацький атестаційний семінар</a
-                  >
-                </h2>
-              </div>
-              <a href="/video/dityacho-yunac-kij-atestacijnij-seminar">
-                <div class="post-overlay">
-                  <div class="post-overlay-meta">
-                    <h2>Дитячо-юнацький атестаційний семінар</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="post span4 isotope-item">
-            <div class="post-inner">
-              <div class="post-header">
-                <a href="/video/kids-youth-aikido"
-                  ><img src="http://img.youtube.com/vi/twyOA9GObtI/mqdefault.jpg" alt="" /></a
-                >
-              </div>
-              <div class="post-body">
-                <h2>
-                  <a href="/video/kids-youth-aikido"
-                    >Kids and Youth Aikido seminar in Uzhhorod. Aikido for Ukraine.</a
-                  >
-                </h2>
-              </div>
-              <a href="/video/kids-youth-aikido">
-                <div class="post-overlay">
-                  <div class="post-overlay-meta">
-                    <h2>Kids and Youth Aikido seminar in Uzhhorod. Aikido for Ukraine.</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="post span4 isotope-item">
-            <div class="post-inner">
-              <div class="post-header">
-                <a href="/video/aikido-summer-school-2022"
-                  ><img src="http://img.youtube.com/vi/fOgl7ZaSMaM/mqdefault.jpg" alt="" /></a
-                >
-              </div>
-              <div class="post-body">
-                <h2><a href="/video/aikido-summer-school-2022">Aikido summer school 2022</a></h2>
-              </div>
-              <a href="/video/aikido-summer-school-2022">
-                <div class="post-overlay">
-                  <div class="post-overlay-meta">
-                    <h2>Aikido summer school 2022</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="post span4 isotope-item">
-            <div class="post-inner">
-              <div class="post-header">
-                <a href="/video/vazhkij-ale-nasichenij-podiyami-2022-rik"
-                  ><img src="http://img.youtube.com/vi/5gAFqzFs9fA/mqdefault.jpg" alt="" /></a
-                >
-              </div>
-              <div class="post-body">
-                <h2>
-                  <a href="/video/vazhkij-ale-nasichenij-podiyami-2022-rik"
-                    >Важкий, але насичений подіями 2022 рік</a
-                  >
-                </h2>
-              </div>
-              <a href="/video/vazhkij-ale-nasichenij-podiyami-2022-rik">
-                <div class="post-overlay">
-                  <div class="post-overlay-meta">
-                    <h2>Важкий, але насичений подіями 2022 рік</h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <!-- ===== НОВИНИ ===== -->
+      <section>
+        <div class="section-head">
+  <h2>Новини</h2>
+  <a href="/blog">Всі новини »</a>
+</div>
+
+        <div class="home-grid">
+          <a class="home-card" href="https://aikidoacademy.com.ua/blog/-2025/kniga-yaku-varto-prochitati/">
+            <img src="/blog/Kniga-yaku-varto-prochitati.jpg" alt="" />
+            <h3>Книга, яку варто прочитати</h3>
+          </a>
+
+          <a class="home-card" href="https://aikidoacademy.com.ua/blog/2025/pikuj/">
+            <img src="/blog/2025/pikuj.jpg" alt="" />
+            <h3>За межами залу</h3>
+          </a>
+
+          <a class="home-card" href="https://aikidoacademy.com.ua/blog/2025/mmnmm/">
+            <img src="/blog/2025/mmnmm-7.jpg" alt="" />
+            <h3>Дружба в дії</h3>
+          </a>
+        </div>
+      </section>
+
+      <!-- ===== ВІДЕО ===== -->
+      <section>
+        <div class="section-head">
+  <h2>Наші відео</h2>
+  <a href="/video">Більше відео »</a>
+</div>
+
+        <div class="home-grid">
+          <YouTube id="xwj6n4Knu1k" title="Seminar aikido with Stefan Stenudd 2023" />
+          <YouTube id="HEts2erkrqU" title="Aikido Demonstration 17.02.2024" />
+          <YouTube id="cjVac_93B-o" title="Smerekovo AikiCamp 2025" />
+        </div>
+      </section>
+
     </div>
   </div>
+
 </MainLayout>
