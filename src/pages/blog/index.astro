@@ -52,3 +52,61 @@ const posts = (await getCollection('blog')).sort(
     </div>
   </div>
 </MainLayout>
+
+<style>
+/* === Real 2-column grid for news page === */
+
+.blog-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Вимикаємо спадщину теми */
+.blog-grid > li.post {
+  width: auto !important;
+  float: none !important;
+  margin: 0 !important;
+}
+
+/* Однакова висота карток */
+.blog-grid .post-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-grid .post-body {
+  flex: 1;
+}
+
+/* === Обмеження опису до 2 рядків === */
+.blog-grid .post-excerpt {
+  line-height: 1.4em;
+  height: 2.8em;
+  overflow: hidden;
+}
+
+/* === Однакова висота картинок === */
+.blog-grid .post-header {
+  height: 230px;
+  overflow: hidden;
+}
+
+.blog-grid .post-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+

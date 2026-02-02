@@ -3620,3 +3620,26 @@ td.number
   }
 }
 
+/* === Fix search overlay under header image === */
+
+#header {
+  overflow: visible !important;
+}
+
+#search-box {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  z-index: 9999;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.header-parallax {
+  pointer-events: none;
+}

@@ -165,7 +165,8 @@ import Layout from '../layouts/HomeLayout.astro'
 
       <!-- ===== НОВИНИ ===== -->
       <section class="home-section">
-  <div class="section-head">
+    <div class="section-line"></div>
+        <div class="section-head">
     <h2>Новини</h2>
     <a href="/blog">Всі новини »</a>
   </div>
@@ -192,10 +193,12 @@ import Layout from '../layouts/HomeLayout.astro'
 
       <!-- ===== ВІДЕО ===== -->
       <section class="home-section">
-  <div class="section-head">
+  <div class="section-line"></div>
+        <div class="section-head">
     <h2>Наші відео</h2>
     <a href="/video">Більше відео »</a>
   </div>
+  
 
   <div class="home-grid-3">
     <YouTube id="xwj6n4Knu1k" title="Seminar aikido with Stefan Stenudd 2023" />
@@ -280,5 +283,21 @@ import Layout from '../layouts/HomeLayout.astro'
   .home-grid-3 {
     grid-template-columns: 1fr;
   }
+}
+
+.section-head {
+  position: relative;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+}
+
+.section-line {
+  height: 2px;
+  background: #e5e5e5;
+  margin: 12px 0 20px;
+}
+
+.section-head h2 {
+  border-bottom: none !important;
 }
 </style>

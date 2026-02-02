@@ -49,3 +49,31 @@ const posts = (await getCollection('video')).sort(
     </div>
   </div>
 </MainLayout>
+
+<style>
+/* === Clamp video description to 2 lines ONLY on video page === */
+
+
+.post.span4 .post-body h2 {
+  line-height: 1.3em;
+  height: 2.6em;     /* 2 рядки */
+  overflow: hidden;
+}
+
+.post.span4 .post-body p {
+  line-height: 1.4em;
+  height: 2.8em;     /* 2 рядки */
+  overflow: hidden;
+}
+
+/* вирівнюємо картки */
+.post.span4 .post-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.post.span4 .post-body {
+  flex: 1;
+}
+</style>
