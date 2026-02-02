@@ -164,45 +164,121 @@ import Layout from '../layouts/HomeLayout.astro'
 <div class="home-clean">
 
       <!-- ===== НОВИНИ ===== -->
-      <section>
-        <div class="section-head">
-  <h2>Новини</h2>
-  <a href="/blog">Всі новини »</a>
-</div>
+      <section class="home-section">
+  <div class="section-head">
+    <h2>Новини</h2>
+    <a href="/blog">Всі новини »</a>
+  </div>
 
-        <div class="home-grid">
-          <a class="home-card" href="https://aikidoacademy.com.ua/blog/-2025/kniga-yaku-varto-prochitati/">
-            <img src="/blog/Kniga-yaku-varto-prochitati.jpg" alt="" />
-            <h3>Книга, яку варто прочитати</h3>
-          </a>
+  <div class="home-grid-3">
+        <a class="home-card" href="https://aikidoacademy.com.ua/blog/2025/mmnmm/">
+      <img src="/blog/2025/mmnmm-7.jpg" alt="">
+      <h3>Дружба в дії</h3>
+    </a>
+    
+    <a class="home-card" href="https://aikidoacademy.com.ua/blog/-2025/kniga-yaku-varto-prochitati/">
+      <img src="/blog/Kniga-yaku-varto-prochitati.jpg" alt="">
+      <h3>Книга, яку варто прочитати</h3>
+    </a>
 
-          <a class="home-card" href="https://aikidoacademy.com.ua/blog/2025/pikuj/">
-            <img src="/blog/2025/pikuj.jpg" alt="" />
-            <h3>За межами залу</h3>
-          </a>
+    <a class="home-card" href="https://aikidoacademy.com.ua/blog/2025/pikuj/">
+      <img src="/blog/2025/pikuj.jpg" alt="">
+      <h3>За межами залу</h3>
+    </a>
 
-          <a class="home-card" href="https://aikidoacademy.com.ua/blog/2025/mmnmm/">
-            <img src="/blog/2025/mmnmm-7.jpg" alt="" />
-            <h3>Дружба в дії</h3>
-          </a>
-        </div>
-      </section>
+
+  </div>
+</section>
 
       <!-- ===== ВІДЕО ===== -->
-      <section>
-        <div class="section-head">
-  <h2>Наші відео</h2>
-  <a href="/video">Більше відео »</a>
-</div>
+      <section class="home-section">
+  <div class="section-head">
+    <h2>Наші відео</h2>
+    <a href="/video">Більше відео »</a>
+  </div>
 
-        <div class="home-grid">
-          <YouTube id="xwj6n4Knu1k" title="Seminar aikido with Stefan Stenudd 2023" />
-          <YouTube id="HEts2erkrqU" title="Aikido Demonstration 17.02.2024" />
-          <YouTube id="cjVac_93B-o" title="Smerekovo AikiCamp 2025" />
-        </div>
-      </section>
+  <div class="home-grid-3">
+    <YouTube id="xwj6n4Knu1k" title="Seminar aikido with Stefan Stenudd 2023" />
+    <YouTube id="HEts2erkrqU" title="Aikido Demonstration 17.02.2024" />
+    <YouTube id="cjVac_93B-o" title="Smerekovo AikiCamp 2025" />
+  </div>
+</section>
 
     </div>
   </div>
 
 </MainLayout>
+
+
+<style>
+.home-section {
+  max-width: 1020px;
+  margin: 40px auto;
+  padding: 0 10px;
+}
+
+/* заголовок + лінк */
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 28px;
+  text-transform: uppercase;
+  flex: 1;
+  text-align: center;
+}
+
+
+.section-head a {
+  color: #313131;
+  text-decoration: none;
+}
+
+.section-head a:hover {
+  color: #1eb0bc;
+}
+
+/* 3 колонки */
+.home-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* картки новин */
+.home-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.home-card h3 {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* мобільний */
+@media (max-width: 768px) {
+  .section-head {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .home-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
