@@ -3650,3 +3650,25 @@ td.number
   height: auto;
   display: inline-block;
 }
+
+.tp-caption a {
+  position: relative;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+/* Фікс позиції кнопки Details у всіх слайдах */
+.tp-caption .btn-style1 {
+	position: absolute !important;
+	right: 40px !important;
+	bottom: 40px !important;
+	z-index: 9999;
+}
+
+.tp-caption {
+	pointer-events: none;
+}
+
+.tp-caption .btn-style1 {
+	pointer-events: auto;
+}
