@@ -4,82 +4,37 @@ import Layout from '../layouts/HomeLayout.astro'
 ---
 
 <Layout title="Головна" description="Головна">
-  <div id="header-panel" class="wrapper">
+  <div id="header-panel">
     <div class="header-overlay"></div>
-    <div class="rev-slider slider container fullwidth">
+    <div class="rev-slider slider fullwidth">
       <div class="fullwidthbanner-container">
         <div class="fullwidthabnner">
           <ul>
             <li data-transition="3dcurtain-horizontal" data-slotamount="1">
-              <img
-                src="/media/stefan-summer-2018.jpg"
-                width="1020"
-                height="570"
-                alt="stefan-summer-2018"
-                title="stefan-summer-2018"
-              />
-              <div
-                class="caption sfb tp-caption start"
-                data-speed="600"
-                data-start="2200"
-                data-easing="easeOutBack"
-                data-x="865"
-                data-y="478"
-              >
-                <a
-                  href="blog/letnyaya-shkola-shihana-stefana-stenudda-v-uzhgorode-2018"
-                  title="details"
-                  class="btn-large btn-style1">Details</a
-                >
-              </div>
-            </li><li data-transition="fade" data-slotamount="1">
-              <img src="/media/0-24.jpg" width="1020" height="570" alt="0-24" title="0-24" />
-              <div
-                class="caption sfb tp-caption start"
-                data-speed="600"
-                data-start="2200"
-                data-easing="easeOutBack"
-                data-x="865"
-                data-y="478"
-              >
-                <a
-                  href="blog/international-24-hour-aikido-marathon"
-                  title="details"
-                  class="btn-large btn-style1">Details</a
-                >
-              </div>
-            </li><li data-transition="slidevertical" data-slotamount="1">
-              <img src="/media/bruno.jpg" width="1020" height="570" alt="bruno" title="bruno" />
-              <div
-                class="caption sfb tp-caption start"
-                data-speed="600"
-                data-start="2200"
-                data-easing="easeOutBack"
-                data-x="865"
-                data-y="478"
-              >
-                <a
-                  href="/blog/ceminar-bruno-gonzalesa-6-dan-ajkido-ajkikaj-franciya"
-                  title="details"
-                  class="btn-large btn-style1">Details</a
-                >
+              <img src="/media/stefan-summer-2018.jpg" width="1020" height="570" alt="" />
+              <div class="caption sfb tp-caption start" data-speed="600" data-start="2200" data-easing="easeOutBack" data-x="865" data-y="478">
+                <a href="blog/-2025/letnyaya-shkola-shihana-stefana-stenudda-v-uzhgorode-2018" class="btn-large btn-style1">Details</a>
               </div>
             </li>
+
+            <li data-transition="fade" data-slotamount="1">
+              <img src="/media/0-24.jpg" width="1020" height="570" alt="" />
+              <div class="caption sfb tp-caption start" data-speed="600" data-start="2200" data-easing="easeOutBack" data-x="865" data-y="478">
+                <a href="blog/-2025/international-24-hour-aikido-marathon" class="btn-large btn-style1">Details</a>
+              </div>
+            </li>
+
+            <li data-transition="slidevertical" data-slotamount="1">
+              <img src="/media/bruno.jpg" width="1020" height="570" alt="" />
+              <div class="caption sfb tp-caption start" data-speed="600" data-start="2200" data-easing="easeOutBack" data-x="865" data-y="478">
+                <a href="/blog/-2025/ceminar-bruno-gonzalesa-6-dan-ajkido-ajkikaj-franciya" class="btn-large btn-style1">Details</a>
+              </div>
+            </li>
+
             <li data-transition="3dcurtain-horizontal" data-slotamount="1">
-              <img src="/media/stefan.jpg" width="1021" height="570" alt="stefan" title="stefan" />
-              <div
-                class="caption sfb tp-caption start"
-                data-speed="600"
-                data-start="2200"
-                data-easing="easeOutBack"
-                data-x="865"
-                data-y="478"
-              >
-                <a
-                  href="/blog/ceminar-shihana-stefana-stenudda"
-                  title="details"
-                  class="btn-large btn-style1">Details</a
-                >
+              <img src="/media/stefan.jpg" width="1021" height="570" alt="" />
+              <div class="caption sfb tp-caption start" data-speed="600" data-start="2200" data-easing="easeOutBack" data-x="865" data-y="478">
+                <a href="/blog/-2025/ceminar-shihana-stefana-stenudda" class="btn-large btn-style1">Details</a>
               </div>
             </li>
           </ul>
@@ -91,126 +46,57 @@ import Layout from '../layouts/HomeLayout.astro'
     </div>
   </div>
 
-  <div id="main" class="wrapper">
-    <div class="main-content container frontpage">
-      <!-- Container -->
-      <div id="hide-info-container" class="row">
-        <!-- hide info box -->
-        <div class="hide-info-box-style1 span4">
-          <div class="hide-info-box-content">
-            <div class="hide-info-box-header">
-              <img src="/media/1_306x205.jpg" alt="Наші проекти" />
-            </div>
-            <p class="tcenter">Наші проекти</p>
-            <p><a href="/projects" class="btn btn-style1 hide-info-btn">Ознайомитись</a></p>
-            <div class="clearfix"></div>
-          </div>
-          <div class="circle-box">
-            <h4>
-              <span class="circle">
-                <span class="circle-border"></span>
-                <span class="circle-inner icon-ai"></span>
-              </span>
-              AI<small>Рівновага, гармонія</small>
-            </h4>
-          </div>
-        </div>
-        <!-- /hide info box -->
+  <div class="main-content frontpage">
 
-        <!-- hide info box -->
-        <div class="hide-info-box-style2 span4">
-          <div class="hide-info-box-content">
-            <div class="hide-info-box-header">
-              <img src="/media/2_306x205.jpg" alt="Розклад семінарів" />
-            </div>
-            <p class="tcenter">Розклад семінарів</p>
-            <p><a href="/rozklad-seminariv" class="btn btn-style1 hide-info-btn">Переглянути</a></p>
-            <div class="clearfix"></div>
-          </div>
-          <div class="circle-box">
-            <h4>
-              <span class="circle">
-                <span class="circle-border"></span>
-                <span class="circle-inner icon-ki"></span>
-              </span>
-              KI<small>Життєва сила</small>
-            </h4>
-          </div>
-        </div>
-        <!-- /hide info box -->
+    <div id="hide-info-container" class="row">
+      <!-- ТУТ ТВОЇ hide-info-box-и БЕЗ ЗМІН -->
+    </div>
 
-        <!-- hide info box -->
-        <div class="hide-info-box-style3 span4">
-          <div class="hide-info-box-content">
-            <div class="hide-info-box-header">
-              <img src="/media/3_306x205.jpg" alt="Про айкідо Академію Айкідо Айкікай" />
-            </div>
-            <p class="tcenter">Про академію</p>
-            <p><a href="/about" class="btn btn-style1 hide-info-btn">Читати</a></p>
-            <div class="clearfix"></div>
-          </div>
-          <div class="circle-box">
-            <h4>
-              <span class="circle">
-                <span class="circle-border"></span>
-                <span class="circle-inner icon-do"></span>
-              </span>
-              DO<small>Філософський принцип</small>
-            </h4>
-          </div>
-        </div>
-        <!-- /hide info box -->
-      </div>
-<div class="home-clean">
+    <div class="home-clean">
 
-      <!-- ===== НОВИНИ ===== -->
       <section class="home-section">
-    <div class="section-line"></div>
+        <div class="section-line"></div>
         <div class="section-head">
-    <h2>Новини</h2>
-    <a href="/blog">Всі новини »</a>
-  </div>
+          <h2>Новини</h2>
+          <a href="/blog">Всі новини »</a>
+        </div>
 
-  <div class="home-grid-3">
-        <a class="home-card" href="https://aikidoacademy.com.ua/blog/2025/mmnmm/">
-      <img src="/blog/2025/mmnmm-7.jpg" alt="">
-      <h3>Дружба в дії</h3>
-    </a>
-    
-    <a class="home-card" href="https://aikidoacademy.com.ua/blog/-2025/kniga-yaku-varto-prochitati/">
-      <img src="/blog/Kniga-yaku-varto-prochitati.jpg" alt="">
-      <h3>Книга, яку варто прочитати</h3>
-    </a>
+        <div class="home-grid-3">
+          <a class="home-card" href="https://aikidoacademy.com.ua/blog/2025/mmnmm/">
+            <img src="/blog/2025/mmnmm-7.jpg" />
+            <h3>Дружба в дії</h3>
+          </a>
 
-    <a class="home-card" href="https://aikidoacademy.com.ua/blog/2025/pikuj/">
-      <img src="/blog/2025/pikuj.jpg" alt="">
-      <h3>За межами залу</h3>
-    </a>
+          <a class="home-card" href="https://aikidoacademy.com.ua/blog/-2025/kniga-yaku-varto-prochitati/">
+            <img src="/blog/Kniga-yaku-varto-prochitati.jpg" />
+            <h3>Книга, яку варто прочитати</h3>
+          </a>
 
+          <a class="home-card" href="https://aikidoacademy.com.ua/blog/2025/pikuj/">
+            <img src="/blog/2025/pikuj.jpg" />
+            <h3>За межами залу</h3>
+          </a>
+        </div>
+      </section>
 
-  </div>
-</section>
-
-      <!-- ===== ВІДЕО ===== -->
       <section class="home-section">
-  <div class="section-line"></div>
+        <div class="section-line"></div>
         <div class="section-head">
-    <h2>Наші відео</h2>
-    <a href="/video">Більше відео »</a>
-  </div>
-  
+          <h2>Наші відео</h2>
+          <a href="/video">Більше відео »</a>
+        </div>
 
-  <div class="home-grid-3">
-    <YouTube id="xwj6n4Knu1k" title="Seminar aikido with Stefan Stenudd 2023" />
-    <YouTube id="HEts2erkrqU" title="Aikido Demonstration 17.02.2024" />
-    <YouTube id="cjVac_93B-o" title="Smerekovo AikiCamp 2025" />
-  </div>
-</section>
+        <div class="home-grid-3">
+          <YouTube id="xwj6n4Knu1k" title="Seminar aikido with Stefan Stenudd 2023" />
+          <YouTube id="HEts2erkrqU" title="Aikido Demonstration 17.02.2024" />
+          <YouTube id="cjVac_93B-o" title="Smerekovo AikiCamp 2025" />
+        </div>
+      </section>
 
     </div>
   </div>
 
-</MainLayout>
+</Layout>
 
 
 <style>

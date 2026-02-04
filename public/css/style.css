@@ -456,14 +456,14 @@
 	 }
 	/* header image */
 	.header-image {		
-		background-position:50% 0;
+		background-position:center center;
 		background-repeat:no-repeat;
-		background-size:cover!important;
+		background-size:contain !important;
 		-moz-background-size:cover!important;
 		-o-background-size:cover!important;
 		-webkit-background-size:cover!important;
 		background-attachment:scroll!important;		
-		height:275px;
+		height:310px;
 		position:relative;
 		width:100%;		
 		z-index:1;
@@ -3558,46 +3558,6 @@ td.number
   background-position: center;
 }
 
-.menu-search {
-  float: right;
-}
-
-.search-wrapper {
-  position: relative;
-  width: 320px;
-  margin-left: auto;
-}
-
-#search-input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-}
-
-#search-results {
-  position: absolute;
-  top: 38px;
-  left: 0;
-  right: 0;
-  background: #fff;
-  border: 1px solid #ddd;
-  max-height: 300px;
-  overflow-y: auto;
-  z-index: 9999;
-}
-
-#search-results a {
-  display: block;
-  padding: 6px;
-  text-decoration: none;
-  color: #333;
-}
-
-#search-results a:hover {
-  background: #f3f3f3;
-}
-
-
 .search-icon::before {
   content: "🔍";
   filter: grayscale(100%);
@@ -3626,20 +3586,61 @@ td.number
   overflow: visible !important;
 }
 
-#search-box {
-  display: none;
-  position: fixed;
-  top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 600px;
-  z-index: 9999;
-  background: white;
-  padding: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
 .header-parallax {
   pointer-events: none;
+}
+
+/* ================= SEARCH OVERLAY ================= */
+
+#search-box {
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  max-width: 92%;
+  background: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.25);
+  z-index: 10000;
+  display: none;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+#search-results {
+  margin-top: 10px;
+  max-height: 320px;
+  overflow-y: auto;
+  border-top: 1px solid #eee;
+}
+
+.search-result-item {
+  display: block;
+  padding: 10px 8px;
+  text-decoration: none;
+  color: #222;
+  border-bottom: 1px solid #f1f1f1;
+  font-weight: 500;
+}
+
+.search-result-item:hover {
+  background: #f7f7f7;
+}
+
+.schedule-image {
+  text-align: center;
+}
+
+.schedule-image img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
 }

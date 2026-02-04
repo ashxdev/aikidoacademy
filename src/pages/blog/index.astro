@@ -11,7 +11,9 @@ const posts = (await getCollection('blog')).sort(
 )
 ---
 
-<MainLayout title="Новини" description="Новини" keywords="Новини">
+<MainLayout 
+activeMenu="blog"
+title="Новини" description="Новини" keywords="Новини">
   <HeaderImage title="Новини" imageSrc="/media/blog.jpg" />
 
   <div id="main" class="wrapper">

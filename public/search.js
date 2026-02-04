@@ -1,3 +1,5 @@
+console.log('SEARCH JS WORKS');
+
 let pages = [];
 
 async function loadIndex() {
@@ -5,42 +7,13 @@ async function loadIndex() {
   pages = await res.json();
 }
 
-function createResultItem(page) {
-  const a = document.createElement('a');
-  a.href = page.url;
-  a.style.display = 'block';
-  a.style.padding = '8px 10px';
-  a.style.borderBottom = '1px solid #eee';
-  a.style.textDecoration = 'none';
-  a.style.color = '#222';
-
-  const title = document.createElement('div');
-  title.textContent = page.title;
-  title.style.fontWeight = '600';
-
-   a.appendChild(title);
-
-  return a;
-}
-
-function initSearch() {
+function attachSearch() {
   const input = document.getElementById('search-input');
-  if (!input) return;
+  const box = document.getElementById('search-results');
+  const searchBox = document.getElementById('search-box');
 
-  const box = document.createElement('div');
-  box.style.position = 'absolute';
-  box.style.top = '100%';
-  box.style.left = '0';
-  box.style.right = '0';
-  box.style.background = '#fff';
-  box.style.border = '1px solid #ddd';
-  box.style.maxHeight = '300px';
-  box.style.overflowY = 'auto';
-  box.style.zIndex = '9999';
-  box.style.display = 'none';
-
-  input.parentElement.style.position = 'relative';
-  input.parentElement.appendChild(box);
+  if (!input || !box || input.dataset.searchAttached) return;
+  input.dataset.searchAttached = 'true';
 
   input.addEventListener('input', () => {
     const q = input.value.toLowerCase().trim();
@@ -51,44 +24,57 @@ function initSearch() {
       return;
     }
 
-    const results = pages.filter(p =>
-      p.title.toLowerCase().includes(q) ||
-      p.content.includes(q)
-    ).slice(0, 20);
+    const results = pages
+      .filter(p =>
+        p.title && (
+          p.title.toLowerCase().includes(q) ||
+          p.content.includes(q)
+        )
+      )
+      .slice(0, 20);
 
     results.forEach(p => {
-      box.appendChild(createResultItem(p));
+      const a = document.createElement('a');
+      a.href = p.url;
+      a.textContent = p.title;
+      a.className = 'search-result-item';
+      box.appendChild(a);
     });
 
     box.style.display = results.length ? 'block' : 'none';
   });
 
+  // Закриття ВСЬОГО пошуку по кліку збоку
   document.addEventListener('click', e => {
-    if (!input.contains(e.target)) {
+    if (!searchBox.contains(e.target)) {
+      searchBox.style.display = 'none';
       box.style.display = 'none';
+      input.value = '';
     }
   });
 }
 
-loadIndex().then(initSearch);
-
-document.addEventListener('DOMContentLoaded', () => {
+function attachOpenButton() {
   const btn = document.getElementById('open-search');
   const searchBox = document.getElementById('search-box');
   const input = document.getElementById('search-input');
 
-  if (!btn || !searchBox || !input) return;
+  if (!btn || !searchBox || !input || btn.dataset.searchAttached) return;
+  btn.dataset.searchAttached = 'true';
 
-  btn.addEventListener('click', () => {
-    const isHidden = searchBox.style.display === 'none' || !searchBox.style.display;
-    searchBox.style.display = isHidden ? 'block' : 'none';
-    input.focus();
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    searchBox.style.display = 'block';
+    setTimeout(() => input.focus(), 50);
   });
+}
 
-  document.addEventListener('click', (e) => {
-    if (!searchBox.contains(e.target) && !btn.contains(e.target)) {
-      searchBox.style.display = 'none';
-    }
-  });
-});
+function setup() {
+  attachSearch();
+  attachOpenButton();
+}
 
+document.addEventListener('astro:page-load', setup);
+document.addEventListener('DOMContentLoaded', setup);
+
+loadIndex();

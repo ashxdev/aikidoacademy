@@ -8,7 +8,8 @@ const posts = (await getCollection('video')).sort(
 )
 ---
 
-<MainLayout title="Відео" description="Відео" keywords="Відео">
+<MainLayout activeMenu="video"
+title="Відео" description="Відео" keywords="Відео">
   <HeaderImage title="Відео" imageSrc="/media/blog.jpg" />
 
   <div id="main" class="wrapper">

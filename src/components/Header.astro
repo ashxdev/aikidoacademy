@@ -4,6 +4,18 @@ interface Props {
 }
 
 const { activeMenu } = Astro.props;
+
+const menuTitles: Record<string, string> = {
+  home: 'Головна',
+  about: 'Про нас',
+  blog: 'Новини',
+  rozklad: 'Розклад семінарів',
+  contacts: 'Контакти',
+  video: 'Відео',
+};
+
+const currentTitle =
+  menuTitles[activeMenu ?? 'home'] ?? 'Меню';
 ---
 
 <div id="header-info" class="wrapper">
@@ -35,7 +47,7 @@ const { activeMenu } = Astro.props;
   <div id="primary-navigation" class="container fullwidth">
     <a class="menu-responsive">
       <span class="menu-icon-nav"></span>
-      <span class="menu-title">Navigation</span>
+      <span class="menu-title">{currentTitle}</span>
     </a>
 
     <ul class="menu clearfix">
@@ -81,33 +93,19 @@ const { activeMenu } = Astro.props;
         </a>
       </li>
     </ul>
+
+    <div id="search-box" class="search-box" style="display:none;">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Пошук по сайту..."
+        autocomplete="off"
+      />
+      <div id="search-results"></div>
+    </div>
+
+<script is:inline src="/search.js"></script>
+
   </div>
-
-
-<script type="module" src="/search.js"></script>
-
-<script>
-document.addEventListener('click', function(e) {
-  const target = e.target;
-
-  if (!(target instanceof Element)) return;
-
-  const btn = target.closest('#open-search');
-  if (!btn) return;   // ⬅️ ВАЖЛИВО: якщо НЕ клік по пошуку — вихід
-
-  e.preventDefault();
-  e.stopPropagation();
-
-  const box = document.getElementById('search-box');
-  if (box) {
-    box.style.display = 'block';
-
-    setTimeout(() => {
-      const input = document.getElementById('search-input');
-      if (input) input.focus();
-    }, 50);
-  }
-});
-</script>
 
 </div>
