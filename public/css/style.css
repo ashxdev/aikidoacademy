@@ -3126,86 +3126,139 @@
 		transition-property:transform, opacity;
 	}
 	
-/* -------------------------------------------------------------------------------- /
-	[10.3] SLIDER REVOLUTION
-/ -------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- */
+/* [10.3] SLIDER REVOLUTION */
+/* -------------------------------------------------------------------------------- */
 
-	.rev-slider li {
-		background:none;
-		padding:0;
-		height: 570px !important;
-	}
-	.fullwidthbanner-container {
-		overflow:hidden;
-		padding:0;			
-		position:relative;
-		width:100% !important;		
-	}
-	.fullwidthabnner {
-		position:relative;		
-		width:100% !important;
+.rev-slider li {
+	background: none;
+	padding: 0;
+	height: 570px !important;
+}
 
-	}
-	.fullwidthbanner-container img {
-		height:100%;
-		max-width:none;
-		width:auto;		
-	}
-	.js-on .fullwidthbanner-container img {
-		height:auto;
-		width:auto;
-	}
-	.fullwidthbanner-container .caption { display:none; }
-	.js-on .fullwidthbanner-container .caption { display:block; }
-	
-	.fullwidthabnner > ul { margin:0; }
-	.fullwidthabnner > ul > li { display:none; } 
-	.fullwidthabnner > ul > li:first-child,
-	.js-on .fullwidthabnner > ul > li { display:block; } 	
+.fullwidthbanner-container {
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: 100% !important;
+}
 
-	/* slider captions */
-	.tp-caption.slider-title-large {
-		color:#f2f2f2;	
-		font-size:24px;
-		line-height:25px;
-		margin:0;	
-		padding:11px 15px;
-		position:relative;
-		z-index:0;
-	}
-	.tp-caption.slider-title-large:before,
-	.tp-caption.slider-title:before {
-		content:'';			
-		background:#313131;	
-		height:100%;
-		left:0;	
-		opacity:0.9;
-		position:absolute;
-		top:0;
-		width:100%;
-		z-index:-1;
-	}
-	.tp-caption.slider-title {
-		color:#f2f2f2;	
-		font-size:20px;
-		line-height:23px;
-		margin:0;	
-		padding:11px 15px;
-		position:relative;
-		z-index:0;
-	}
-	.slider-light-h1,
-	.slider-light-h2,
-	.slider-light-h3 { color:#fff; }
-	.slider-dark-h1,
-	.slider-dark-h2,
-	.slider-dark-h3 { color:#313131; }	
-	.tp-caption.slider-light-h1,
-	.tp-caption.slider-dark-h1 { font-size:125px; }
-	.tp-caption.slider-light-h2,
-	.tp-caption.slider-dark-h2 { font-size:37px; }
-	.tp-caption.slider-light-h3,
-	.tp-caption.slider-dark-h3 { font-size:26px; }		
+.fullwidthabnner {
+	position: relative;
+	width: 100% !important;
+}
+
+.fullwidthbanner-container img {
+	height: 100%;
+	max-width: none;
+	width: auto;
+}
+
+.js-on .fullwidthbanner-container img {
+	height: auto;
+	width: auto;
+}
+
+.fullwidthbanner-container .caption {
+	display: none;
+}
+
+.js-on .fullwidthbanner-container .caption {
+	display: block;
+}
+
+.fullwidthabnner > ul {
+	margin: 0;
+}
+
+.fullwidthabnner > ul > li {
+	display: none;
+}
+
+.fullwidthabnner > ul > li:first-child,
+.js-on .fullwidthabnner > ul > li {
+	display: block;
+}
+
+/* slider captions */
+
+.tp-caption.slider-title-large {
+	color: #f2f2f2;
+	font-size: 24px;
+	line-height: 25px;
+	margin: 0;
+	padding: 11px 15px;
+	position: relative;
+	z-index: 0;
+}
+
+.tp-caption.slider-title-large:before,
+.tp-caption.slider-title:before {
+	content: '';
+	background: #313131;
+	height: 100%;
+	left: 0;
+	opacity: 0.9;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+.tp-caption.slider-title {
+	color: #f2f2f2;
+	font-size: 20px;
+	line-height: 23px;
+	margin: 0;
+	padding: 11px 15px;
+	position: relative;
+	z-index: 0;
+}
+
+.slider-light-h1,
+.slider-light-h2,
+.slider-light-h3 {
+	color: #fff;
+}
+
+.slider-dark-h1,
+.slider-dark-h2,
+.slider-dark-h3 {
+	color: #313131;
+}
+
+.tp-caption.slider-light-h1,
+.tp-caption.slider-dark-h1 {
+	font-size: 125px;
+}
+
+.tp-caption.slider-light-h2,
+.tp-caption.slider-dark-h2 {
+	font-size: 37px;
+}
+
+.tp-caption.slider-light-h3,
+.tp-caption.slider-dark-h3 {
+	font-size: 26px;
+}
+
+
+/* Дозволяємо Revolution керувати своїми caption */
+
+.fullwidthbanner-container .tp-caption {
+	display: block !important;
+}
+
+/* Дозволяємо Revolution самому ставити координати */
+.fullwidthabnner .tp-caption.start {
+	left: auto !important;
+	top: auto !important;
+}
+
+.fullwidthabnner .tp-caption {
+    position: absolute !important;
+}
+
 
 /* -------------------------------------------------------------------------------- /
 	[10.4] MAGNIFIC POPUP
@@ -3651,24 +3704,7 @@ td.number
   display: inline-block;
 }
 
-.tp-caption a {
-  position: relative;
-  z-index: 9999;
-  pointer-events: auto;
-}
-
-/* Фікс позиції кнопки Details у всіх слайдах */
-.tp-caption .btn-style1 {
-	position: absolute !important;
-	right: 40px !important;
-	bottom: 40px !important;
-	z-index: 9999;
-}
-
-.tp-caption {
-	pointer-events: none;
-}
-
-.tp-caption .btn-style1 {
-	pointer-events: auto;
+.tp-caption.start {
+  left: auto !important;
+  top: auto !important;
 }

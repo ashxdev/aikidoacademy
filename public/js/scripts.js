@@ -27,6 +27,8 @@
 / -------------------------------------------------------------------------------- */
 
 /* add 'js-on' class to 'html' element */
+
+
 var htmlClasses=(document.documentElement.className).split(' ');
 htmlClasses.push('js-on');
 document.documentElement.className = htmlClasses.join(' ').replace(/^\s+|\s+$/g, '');
