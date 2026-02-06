@@ -51,43 +51,31 @@ const today = new Date()
       </div>
       <div class="span4">
         <!-- footer wiget area 2 -->
-        <div class="widget">
-          <h4>
-            <span class="circle">
-              <span class="circle-border"></span>
-              <span class="circle-inner"><span class="circle-icon-about"></span></span>
-            </span>
-            Підписатись на розсилку
-          </h4>
-          <p>Ми будемо повідомляти Вас про новини і семінари айкідо в Україні та за її кордонами</p>
-          <div style="display: none;" class="alert alert-error form-error"></div>
-          <div style="display: none;" class="alert alert-info2 form-success"></div>
-          <form id="subsribe-form" method="post" enctype="multipart/form-data">
-            <p class="input-button-inside">
-              <input
-                tabindex="3"
-                type="text"
-                size="70"
-                name="ContentObjectAttribute_data_text_2264"
-                value=""
-                data-default="Email"
-                placeholder="Email"
-                min="5"
-                max="100"
-                required=""
-              />
-              <button type="submit" name="ActionCollectInformation" class="input-button-search"
-              ></button>
-            </p>
-            <!-- Send Button -->
-            <input type="hidden" name="ContentNodeID" value="415" />
-            <input type="hidden" name="ContentObjectID" value="417" />
-            <input type="hidden" name="ViewMode" value="full" />
-            <input type="hidden" name="ActionCollectInformation" />
-          </form>
-        </div>
-        <!-- /footer wiget area 2 -->
-      </div>
+<div class="widget">
+    <h4>
+  <a href="/about" title="Про нас">
+    <span class="circle">
+      <span class="circle-border"></span>
+      <span class="circle-inner">
+        <span class="circle-icon-about"></span>
+      </span>
+    </span>
+  </a>
+  Академія айкідо Айкікай
+</h4>
+    <p>
+      Академія айкідо Айкікай — простір розвитку для дітей, підлітків і дорослих в Ужгороді.
+    </p>
+    <ul class="footer-about">
+      <li>Міжнародні семінари, табори та спільні тренування</li>
+      <li>Частина світової спільноти Aikido Aikikai</li>
+      <li>Багаторічний досвід виховання учнів та викладання айкідо</li>
+    </ul>
+    <p>
+  <strong>Айкідо для нас — це не лише рух, а спосіб мислення і ставлення до людей.</strong>
+</p>
+  </div>
+</div>
       <div class="span4">
         <!-- footer wiget area 3 -->
         <div class="widget">
@@ -104,12 +92,17 @@ const today = new Date()
             Закарпаття, Ужгород<br />
             88000
           </p>
-          <p>
-            E-mail: <a href="mailto:aikidoaikikai.academy@gmail.com" class="link-style2"
-              >aikidoaikikai.academy@gmail.com</a
-            ><br />
-            Tel: +38 (050) 931 46 01
-          </p>
+        <p>
+  E-mail:
+  <a href="mailto:aikidoaikikai.academy@gmail.com" class="link-style2">
+    aikidoaikikai.academy@gmail.com
+  </a>
+  <br />
+  Tel:
+  <a href="tel:+380509314601" class="link-style2">
+    +38 (050) 931 46 01
+  </a>
+</p>
         </div>
         <!-- /footer wiget area 3 -->
       </div>
@@ -119,15 +112,12 @@ const today = new Date()
 <!-- /#footer -->
 <!-- #bottom -->
 <div id="bottom" class="wrapper">
-  <div class="container">
-    <div class="clearfix"></div>
-    <p class="copyright">
-      &copy; {today.getFullYear()} | aikidoacademy by <a
-        href="https://github.com/ashxdev/aikidoacademy"
-        class="link-style2">Shap &amp; Karamelki</a
-      >
-    </p>
-  </div>
+<div class="container">
+  <div class="clearfix"></div>
+  <p class="copyright">
+    &copy; 2016 | aikidoacademy by Shap &amp; Karamelki
+  </p>
+</div>
 </div>
 <!-- /#bottom -->
 <div class="social-icons">
@@ -135,6 +125,11 @@ const today = new Date()
     <div class="social-icon-facebook">
       <a target="_blank" href="https://www.facebook.com/aikidoaikikaiacademy"
         ><img src="/images/social_icons/social_facebook.png" alt="facebook" /></a
+      >
+    </div>
+    <div class="social-icon-instagram">
+      <a target="_blank" href="https://www.instagram.com/aikidoaikikaiacademy/"
+        ><img src="/images/social_icons/social_instagram.png" alt="instagram" /></a
       >
     </div>
     <div class="social-icon-youtube">
