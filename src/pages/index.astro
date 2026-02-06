@@ -7,88 +7,58 @@ import Layout from '../layouts/HomeLayout.astro'
 <Layout title="Головна" description="Головна">
   <div id="header-panel">
     <div class="header-overlay"></div>
-    <div class="rev-slider slider fullwidth">
-      <div class="fullwidthbanner-container">
-        <div class="fullwidthabnner">
-          <ul>
-<li data-transition="3dcurtain-horizontal" data-slotamount="1">
-  <img src="/media/stefan-summer-2018.jpg" width="1020" height="570" alt="" />
-  <div
-class="caption sfb tp-caption tp-resizeme start"
-    data-speed="600"
-    data-start="2200"
-    data-easing="easeOutBack"
-    data-x="right"
-    data-hoffset="40"
-    data-y="bottom"
-    data-voffset="30"
-  >
-    <a href="blog/-2025/letnyaya-shkola-shihana-stefana-stenudda-v-uzhgorode-2018" class="btn-large btn-style1">
-      Details
-    </a>
-  </div>
-</li>
+<div class="hero-slider">
 
-<li data-transition="fade" data-slotamount="1">
-  <img src="/media/0-24.jpg" width="1020" height="570" alt="" />
-  <div
-class="caption sfb tp-caption tp-resizeme start"
-    data-speed="600"
-    data-start="2200"
-    data-easing="easeOutBack"
-    data-x="right"
-    data-hoffset="40"
-    data-y="bottom"
-    data-voffset="30"
-  >
-    <a href="blog/-2025/international-24-hour-aikido-marathon" class="btn-large btn-style1">
-      Details
-    </a>
+  <div class="slide active">
+    <img src="/media/stefan-summer-2018.jpg" alt="">
+    <a href="blog/-2025/letnyaya-shkola-shihana-stefana-stenudda-v-uzhgorode-2018" class="details">Details</a>
   </div>
-</li>
 
-<li data-transition="slidevertical" data-slotamount="1">
-  <img src="/media/bruno.jpg" width="1020" height="570" alt="" />
-  <div
-class="caption sfb tp-caption tp-resizeme start"
-    data-speed="600"
-    data-start="2200"
-    data-easing="easeOutBack"
-    data-x="right"
-    data-hoffset="40"
-    data-y="bottom"
-    data-voffset="30"
-  >
-    <a href="/blog/-2025/ceminar-bruno-gonzalesa-6-dan-ajkido-ajkikaj-franciya" class="btn-large btn-style1">
-      Details
-    </a>
+  <div class="slide">
+    <img src="/media/0-24.jpg" alt="">
+    <a href="blog/-2025/international-24-hour-aikido-marathon" class="details">Details</a>
   </div>
-</li>
 
-<li data-transition="3dcurtain-horizontal" data-slotamount="1">
-  <img src="/media/stefan.jpg" width="1021" height="570" alt="" />
-  <div
-class="caption sfb tp-caption tp-resizeme start"
-    data-speed="600"
-    data-start="2200"
-    data-easing="easeOutBack"
-    data-x="right"
-    data-hoffset="40"
-    data-y="bottom"
-    data-voffset="30"
-  >
-    <a href="/blog/-2025/ceminar-shihana-stefana-stenudda" class="btn-large btn-style1">
-      Details
-    </a>
+  <div class="slide">
+    <img src="/media/bruno.jpg" alt="">
+    <a href="/blog/-2025/ceminar-bruno-gonzalesa-6-dan-ajkido-ajkikaj-franciya" class="details">Details</a>
   </div>
-</li>
-          </ul>
-        </div>
-      </div>
 
-      <a href="#" class="slider-control-prev"></a>
-      <a href="#" class="slider-control-next"></a>
-    </div>
+  <div class="slide">
+    <img src="/media/stefan.jpg" alt="">
+    <a href="/blog/-2025/ceminar-shihana-stefana-stenudda" class="details">Details</a>
+  </div>
+
+  <button class="nav prev">‹</button>
+  <button class="nav next">›</button>
+
+</div>
+
+<script is:inline>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function showSlide(i) {
+    slides.forEach(s => s.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  document.querySelector('.next').onclick = nextSlide;
+  document.querySelector('.prev').onclick = prevSlide;
+
+  setInterval(nextSlide, 5000);
+</script>
+
   </div>
 
   <div class="main-content frontpage">
@@ -140,6 +110,8 @@ class="caption sfb tp-caption tp-resizeme start"
 
     </div>
   </div>
+
+  
 
 </Layout>
 

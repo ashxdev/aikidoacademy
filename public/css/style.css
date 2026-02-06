@@ -440,7 +440,7 @@
 	}
 
 	/* header panel - header image & map */
-	#header-panel { overflow:hidden; }
+	#header-panel { overflow:visible; }
 	.header-overlay {
 		background:#0b0b0b;
 		position:absolute;
@@ -533,11 +533,12 @@
 
 	/* primary navigation */
 	#primary-navigation {
+		top: 0;
 		background:#f2f2f2;
 		height:45px;
 		overflow:visible;
-		position:relative;
-		z-index:200;
+		position:sticky;
+		z-index:9999;
 	}
 	/* primary navigation - sticky */
 	#primary-navigation.stickynav {
@@ -712,6 +713,62 @@
 
 	/* responsive nav icon */
 	.menu-icon-nav { background:url(../images/menu_icons/menu_icon_nav_light.png) 50% 0 no-repeat !important; }
+
+	/* Базовий стан меню */
+#primary-navigation {
+  transition:
+    transform .35s ease,
+    opacity .35s ease,
+    background .35s ease,
+    backdrop-filter .35s ease;
+}
+
+/* Стан коли прилипає */
+#primary-navigation.mobile-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  /* напівпрозоре матове скло */
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Стан ДО прилипаня (меню сховане трошки вгору) */
+body:not(.scrolled) #primary-navigation {
+  opacity: 0.90;
+}
+
+#mobile-nav-placeholder {
+  display: none;
+  height: 60px; /* висота твого меню */
+}
+
+/* стартовий стан мобільного меню */
+#primary-navigation {
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.mobile-hide {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.mobile-show {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transform: translateY(0);
+  opacity: 0.96;
+  backdrop-filter: blur(6px);
+}
 	
 /* -------------------------------------------------------------------------------- /
 	[5] FOOTER
@@ -3310,6 +3367,7 @@
 			max-width:400px;
 			overflow:hidden;					
 		}
+		
 		#primary-navigation .menu li {
 			height:auto;
 			right:auto;			
@@ -3642,6 +3700,19 @@ td.number
 /* === Fix search overlay under header image === */
 
 #header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #fff;
+}
+
+#header {
+  overflow: visible !important;
+}
+
+#header-panel,
+.wrapper,
+#wrap {
   overflow: visible !important;
 }
 
@@ -3707,4 +3778,250 @@ td.number
 .tp-caption.start {
   left: auto !important;
   top: auto !important;
+}
+
+
+/* ================= hero-slider ================= */
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+#header-panel,
+.hero-slider {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.wrapper,
+.container,
+.container.fullwidth {
+  min-width: 0 !important;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .slide img {
+    object-fit: contain;
+    background: #000; /* або колір фону */
+  }
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+
+  background: #2b2b2b;
+  color: #ff7a00;
+
+  padding: 12px 22px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 8px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .5s ease;
+}
+
+.slide.active .details {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s; /*  затримка */
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,.4);
+  color: #fff;
+  border: none;
+  font-size: 32px;
+  padding: 6px 14px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.nav.prev { left: 18px; }
+.nav.next { right: 18px; }
+
+
+/* ===== FIX STICKY MENU FOR MODERN LAYOUT ===== */
+
+.boxed-stickynav {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  left: 0 !important;
+}
+
+#primary-navigation.stickynav .container.fullwidth {
+  width: 1020px !important;
+  margin: 0 auto !important;
+}
+
+.boxed-stickynav > * {
+  width: 1020px; /* твоя реальна ширина сайту */
+}
+
+/* прибираємо стару boxed-логіку */
+body.boxed #primary-navigation.stickynav {
+  left: 0 !important;
+}
+
+/* щоб контент не підскакував */
+#primary-navigation-placeholder {
+  height: 45px !important;
+}
+
+/* гамбургер завжди зверху */
+.menu-responsive {
+  position: relative;
+  z-index: 10000;
+}
+
+/* на мобілці те саме */
+@media (max-width: 768px) {
+  #primary-navigation.stickynav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+  }
+}
+
+#primary-navigation.mobile-sticky {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  z-index: 9999;
+  background: #fff;
+}
+
+#scrollTopBtn {
+  position: fixed !important;
+  right: 20px !important;
+  bottom: 20px !important;
+  z-index: 999999 !important;
+
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #1eb0bc;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+
+  display: none;
+}
+
+
+#scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  #scroll-top {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #scroll-top {
+    display: none !important;
+  }
+}
+
+#mobileScrollTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  width: 56px;
+  height: 56px;
+
+  background: rgba(140, 140, 140, 0.35); /* значно прозоріша */
+  border-radius: 12px;
+  border: none;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease, background .2s ease;
+
+  z-index: 9999;
+  cursor: pointer;
+}
+
+/* Лінії "дахом" — торкаються кінцями */
+#mobileScrollTop::before,
+#mobileScrollTop::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 3px;
+  background: #ffffff;
+  top: 30px;
+}
+
+/* лівий схил */
+#mobileScrollTop::before {
+  transform: rotate(-35deg);
+  left: 12px;   /* було 14 */
+}
+
+/* правий схил */
+#mobileScrollTop::after {
+  transform: rotate(35deg);
+  right: 12px;  /* було 14 */
+}
+
+#mobileScrollTop:hover {
+  background: rgba(140, 140, 140, 0.55);
+}
+
+@media (min-width: 769px) {
+  #mobileScrollTop {
+    display: none;
+  }
 }

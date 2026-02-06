@@ -25,5 +25,89 @@ const { title, description } = Astro.props
       <Footer />
     </div>
 
+<button id="mobileScrollTop" title="Вгору"></button>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('mobileScrollTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 768) {
+      if (window.scrollY > 300) {
+        btn.style.opacity = '1';
+        btn.style.pointerEvents = 'auto';
+      } else {
+        btn.style.opacity = '0';
+        btn.style.pointerEvents = 'none';
+      }
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
+
+<script>
+window.onload = function () {
+  const nav = document.getElementById('primary-navigation') as HTMLElement;
+  if (!nav) return;
+
+  // створюємо placeholder одразу після меню
+  const placeholder = document.createElement('div');
+  placeholder.id = 'mobile-nav-placeholder';
+  nav.after(placeholder);
+
+  function handleScroll() {
+    if (window.innerWidth <= 768 && window.scrollY > 120) {
+      nav.classList.add('mobile-sticky');
+      placeholder.style.display = 'block';
+    } else {
+      nav.classList.remove('mobile-sticky');
+      placeholder.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+};
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('primary-navigation');
+  if (!nav) return;
+
+  let lastScroll = 0;
+  let triggered = false;
+
+  window.addEventListener('scroll', () => {
+    const current = window.scrollY;
+
+    // момент "дотику" до верху
+    if (current > 160 && !triggered) {
+      nav.classList.add('mobile-hide');
+
+      setTimeout(() => {
+        nav.classList.remove('mobile-hide');
+        nav.classList.add('mobile-show');
+      }, 400);
+
+      triggered = true;
+    }
+
+    if (current < 120) {
+      nav.classList.remove('mobile-show');
+      triggered = false;
+    }
+
+    lastScroll = current;
+  });
+});
+</script>
+
+
   </body>
 </html>
