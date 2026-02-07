@@ -3421,6 +3421,17 @@ body:not(.scrolled) #primary-navigation {
 		.tab-title { border-top: solid 1px #bbb; display:block; }
 		.tab-title:first-child { border-top:none; }
 	}
+
+	/* Landscape мобілки — меню на всю ширину */
+@media (max-width: 979px) {
+
+  #primary-navigation .menu-responsive,
+  #primary-navigation .menu-responsive.open {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }}
 	
 	@media (max-width:767px) {
 	    
@@ -4028,4 +4039,20 @@ body.boxed #primary-navigation.stickynav {
   #mobileScrollTop {
     display: none;
   }
+}
+
+@media (max-width: 1024px) {
+  .row {
+    left: auto !important;
+  }
+
+  .row > * {
+    right: auto !important;
+  }
+}
+
+.frontpage {
+  float: none !important;
+  margin: 0 auto !important;
+  max-width: 1020px;
 }
