@@ -4073,9 +4073,10 @@ body.boxed #primary-navigation.stickynav {
 .schedule-posters {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  align-items: flex-start;
+  gap: 80px;          /* Оце і є повітря між постерами */
   flex-wrap: wrap;
-  margin: 40px 0;
+  margin: 60px 0;     /* Повітря зверху і знизу блоку */
 }
 
 .schedule-posters img {
