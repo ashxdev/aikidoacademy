@@ -4056,3 +4056,32 @@ body.boxed #primary-navigation.stickynav {
   margin: 0 auto !important;
   max-width: 1020px;
 }
+
+.schedule-info {
+  max-width: 100%;
+  margin: 30px 0 20px 0;
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.schedule-info a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.schedule-posters {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.schedule-posters img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
