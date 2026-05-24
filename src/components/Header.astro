@@ -81,19 +81,21 @@ const currentTitle =
     class:list={[{ current: activeMenu === 'projects' }]}
     href="/projects"
   >
+  <span class="menu-icon-features"></span>
     Проєкти
   </a>
 </li>
 
       <li>
         <a href="/rozklad-seminariv">
-          Семінари
+<span class="menu-icon-about"></span>          Семінари
         </a>
       </li>
 
       <li class:list={[{ selectedLava: activeMenu === 'contacts' }]}>
         <a class:list={[{ current: activeMenu === 'contacts' }]} href="/contacts">
-          <span class="menu-icon-contact"></span>Контакти
+          <span class="menu-icon-contact"></span>
+          Контакти
         </a>
       </li>
 

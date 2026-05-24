@@ -602,15 +602,15 @@
 		text-decoration:none;
 	}
 	#primary-navigation .menu > li > a {
-		color:#585858;
-		display:block;
-		font-size:15px;
-		font-weight:700;
-		line-height:15px;
-		padding:15px 20px;
-		position:relative;
-		text-transform:uppercase;
-	}
+  color: #585858;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 15px;
+  padding: 15px 2px;
+  position: relative;
+  text-transform: uppercase;
+}
 	#primary-navigation .menu > li:hover > a,
 	#primary-navigation .menu > li.current > a { color:#1eb0bc; }
 	#primary-navigation .menu ul {
@@ -4234,4 +4234,20 @@ body {
     padding: 35px 25px;
   }
 
+}
+
+.menu > li {
+  margin-right: 16px !important;
+}
+
+.menu > li > a {
+  font-size: 14px;
+}
+
+.menu-icon-home,
+.menu-icon-about,
+.menu-icon-features,
+.menu-icon-blog,
+.menu-icon-contact {
+  margin-right: 5px;
 }
