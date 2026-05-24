@@ -9,7 +9,8 @@ const menuTitles: Record<string, string> = {
   home: 'Головна',
   about: 'Про нас',
   blog: 'Новини',
-  rozklad: 'Розклад семінарів',
+  projects: 'Проєкти',
+  rozklad: 'Семінари',
   contacts: 'Контакти',
   video: 'Відео',
 };
@@ -75,9 +76,18 @@ const currentTitle =
         </a>
       </li>
 
+      <li class:list={[{ selectedLava: activeMenu === 'projects' }]}>
+  <a
+    class:list={[{ current: activeMenu === 'projects' }]}
+    href="/projects"
+  >
+    Проєкти
+  </a>
+</li>
+
       <li>
         <a href="/rozklad-seminariv">
-          Розклад семінарів
+          Семінари
         </a>
       </li>
 
