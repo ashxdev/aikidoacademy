@@ -106,24 +106,6 @@ import MainLayout from '../../layouts/MainLayout.astro'
             </div>
             <div class="team span4 clearfix">
               <div class="team-header">
-                <a href="/about/posvistak-oleksandr" title="Посвістак Олександр"
-                  ><img
-                    src="/media/trainers/posvistak_portret_400x300.jpg"
-                    alt="aikido-trainer"
-                  /></a
-                >
-              </div>
-              <div class="team-content">
-                <h5 class="tcenter">
-                  <a href="/about/posvistak-oleksandr" title="Посвістак Олександр"
-                    >Посвістак Олександр<small> IV Дан айкідо Айкікай</small></a
-                  >
-                </h5>
-                <p class="tcenter">"Сенши Додзьо" Ужгород</p>
-              </div>
-            </div>
-            <div class="team span4 clearfix">
-              <div class="team-header">
                 <a href="/about/virag-andrij" title="Віраг Андрій"
                   ><img src="/media/trainers/virag-andrij.png" alt="aikido-trainer" /></a
                 >
@@ -131,10 +113,25 @@ import MainLayout from '../../layouts/MainLayout.astro'
               <div class="team-content">
                 <h5 class="tcenter">
                   <a href="/about/virag-andrij" title="Віраг Андрій"
-                    >Віраг Андрій<small> II Дан айкідо</small></a
+                    >Віраг Андрій<small> II Дан айкідо Айкікай</small></a
                   >
                 </h5>
                 <p class="tcenter">«Каґамі Додзьо» Ужгород</p>
+              </div>
+            </div>
+            <div class="team span4 clearfix">
+              <div class="team-header">
+                <a href="/about/timea-markina" title="Маркіна Тімея"
+                  ><img src="/media/trainers/timea-markina.jpg" alt="aikido-trainer" /></a
+                >
+              </div>
+              <div class="team-content">
+                <h5 class="tcenter">
+                  <a href="/about/timea-markina" title="Маркіна Тімея"
+                    >Маркіна Тімея<small> I Дан айкідо Айкікай</small></a
+                  >
+                </h5>
+                <p class="tcenter">Ужгород</p>
               </div>
             </div>
           </div>
@@ -143,3 +140,17 @@ import MainLayout from '../../layouts/MainLayout.astro'
     </div>
   </div>
 </MainLayout>
+
+
+<style>
+.team-header {
+  height: 300px;
+  overflow: hidden;
+}
+
+.team-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
