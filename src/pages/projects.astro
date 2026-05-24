@@ -10,12 +10,14 @@ const projects = [
     image: 'https://res.cloudinary.com/du5rp9nvc/image/upload/v1779634727/camp5_zv7o8o.jpg',
     description: 'Літні айкідо табори'
   },
-   {
+
+  {
     title: 'Aikido for Ukraine',
     slug: '/blog/-2025/ajkidoforukraine',
     image: 'https://res.cloudinary.com/du5rp9nvc/image/upload/v1779640743/afu_xlknvf.png',
     description: 'Міжнародний проєкт підтримки'
   },
+
   {
     title: 'Перший дитячий семінар з айкідо',
     slug: '/blog/-2025/pershij-dityachij-seminar-z-ajkido',
@@ -88,8 +90,58 @@ const projects = [
         </ul>
       </div>
 
+      <div class="projects-text">
+
+  <h3>Більше ніж просто тренування</h3>
+
+  <p>
+    Академія Айкідо Айкікай протягом багатьох років
+    реалізовує освітні, дитячі та міжнародні проєкти,
+    які об’єднують людей навколо практики айкідо,
+    розвитку та спільних цінностей.
+  </p>
+
+  <p>
+    Літні табори, міжнародні семінари, дитячі заходи,
+    марафони та спільні тренування допомагають
+    створювати середовище, у якому люди можуть
+    розвиватися не лише фізично, а й особистісно.
+  </p>
+
+  <p>
+    Завдяки підтримці друзів та партнерів з України
+    та Європи ми продовжуємо розвивати нові
+    ініціативи та робити наші проєкти доступнішими
+    для дітей та дорослих.
+  </p>
+
+</div>
+<div class="support-block">
+      <h3>Підтримати проєкти Академії</h3>
+
+  <p>
+    Якщо ви бажаєте підтримати розвиток наших дитячих,
+    освітніх та міжнародних проєктів — будемо щиро
+    вдячні за допомогу.
+  </p>
+
+  <p>
+    Ваша підтримка допомагає нам організовувати
+    семінари, літні табори, міжнародні заходи та
+    розвивати айкідо в Україні.
+  </p>
+
+  <a
+    href="https://send.monobank.ua/jar/23V1tvUYFe"
+    target="_blank"
+    class="support-button"
+  >
+    Підтримати проєкти
+  </a>
     </div>
   </div>
+  
+</div>
 
 </MainLayout>
 
@@ -145,10 +197,76 @@ const projects = [
   margin-top: 10px;
 }
 
+/* Текстовий блок */
+.projects-text {
+  margin-top: 70px;
+  max-width: 900px;
+}
+
+.projects-text h3 {
+  margin-bottom: 25px;
+}
+
+.projects-text p {
+  margin-bottom: 22px;
+  line-height: 1.8;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+
+  .projects-text {
+    margin-top: 50px;
+  }
+}
+.support-block {
+  margin-top: 50px;
+
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 50px 40px;
+
+  background: #f5f5f5;
+  border-radius: 14px;
+
+  text-align: center;
+}
+
+.support-block h3 {
+  margin-bottom: 20px;
+}
+
+.support-block p {
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+
+  line-height: 1.8;
+}
+
+.support-button {
+  display: inline-block;
+
+  margin-top: 15px;
+  padding: 14px 32px;
+
+  background: #111;
+  color: #fff !important;
+
+  text-decoration: none;
+  border-radius: 10px;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.support-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 </style>
